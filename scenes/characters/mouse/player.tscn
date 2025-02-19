@@ -1,26 +1,26 @@
 [gd_scene load_steps=105 format=3 uid="uid://dnlv8wuw8y7et"]
 
 [ext_resource type="Script" path="res://scripts/characters/mouse/player.gd" id="1_p3jmh"]
-[ext_resource type="Texture2D" uid="uid://cnc8pblqp3s00" path="res://assets/characters/mouse/roll.png" id="2_72rxg"]
-[ext_resource type="Texture2D" uid="uid://c2jfclym1rp54" path="res://assets/characters/mouse/idle.png" id="2_ebnf0"]
+[ext_resource type="Texture2D" uid="uid://b57806antj345" path="res://assets/characters/mouse/roll.png" id="2_72rxg"]
+[ext_resource type="Texture2D" uid="uid://mge06d7qle3g" path="res://assets/characters/mouse/idle.png" id="2_ebnf0"]
 [ext_resource type="PackedScene" uid="uid://cq501sdvos586" path="res://scenes/tools/hud.tscn" id="2_ynafe"]
-[ext_resource type="Texture2D" uid="uid://qrrdbwcuial7" path="res://assets/characters/mouse/damaged.png" id="3_7nwh7"]
-[ext_resource type="Texture2D" uid="uid://dlejngkxu8iex" path="res://assets/characters/mouse/walk.png" id="3_nllni"]
-[ext_resource type="Texture2D" uid="uid://c57n7m8rd2p0r" path="res://assets/characters/mouse/obstruct.png" id="3_wj4mi"]
-[ext_resource type="Texture2D" uid="uid://cx5sahijxh51p" path="res://assets/characters/mouse/death.png" id="4_u5uvf"]
-[ext_resource type="Texture2D" uid="uid://d6c3ykmj83iu" path="res://assets/characters/mouse/attack_left.png" id="4_uplh7"]
-[ext_resource type="Texture2D" uid="uid://dpfsuhd4kuo1" path="res://assets/characters/mouse/attack_right.png" id="5_q2nxq"]
-[ext_resource type="Texture2D" uid="uid://dqsuohh178t6r" path="res://assets/characters/mouse/fall.png" id="5_sjks1"]
+[ext_resource type="Texture2D" uid="uid://cn0dnp3t72pmt" path="res://assets/characters/mouse/damaged.png" id="3_7nwh7"]
+[ext_resource type="Texture2D" uid="uid://cj6jfs6bugmgy" path="res://assets/characters/mouse/walk.png" id="3_nllni"]
+[ext_resource type="Texture2D" uid="uid://bievaj0l6vgfx" path="res://assets/characters/mouse/obstruct.png" id="3_wj4mi"]
+[ext_resource type="Texture2D" uid="uid://dd8h8iho3ec7l" path="res://assets/characters/mouse/death.png" id="4_u5uvf"]
+[ext_resource type="Texture2D" uid="uid://cknwxxkqd2r1y" path="res://assets/characters/mouse/attack_left.png" id="4_uplh7"]
+[ext_resource type="Texture2D" uid="uid://ukyk27fm0771" path="res://assets/characters/mouse/attack_right.png" id="5_q2nxq"]
+[ext_resource type="Texture2D" uid="uid://c1l4aa0o5sbrs" path="res://assets/characters/mouse/fall.png" id="5_sjks1"]
 [ext_resource type="PackedScene" uid="uid://cxb8foogagtu4" path="res://scenes/tools/hurt_box.tscn" id="7_d2iwd"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="7_j7bjn"]
-[ext_resource type="AudioStream" uid="uid://dggo1f8tngifv" path="res://assets/characters/mouse/walking.wav" id="14_x6vs6"]
-[ext_resource type="AudioStream" uid="uid://cj6hqahwqnv2v" path="res://assets/characters/mouse/falling.wav" id="15_xmuk8"]
-[ext_resource type="AudioStream" uid="uid://d0iubstcc5mhs" path="res://assets/characters/mouse/attack_1.wav" id="16_k66u4"]
-[ext_resource type="AudioStream" uid="uid://btomit3nvl171" path="res://assets/characters/mouse/attack_2.wav" id="17_5gtr8"]
-[ext_resource type="AudioStream" uid="uid://dpg81g7i507qy" path="res://assets/characters/mouse/damaged.wav" id="18_0o1sa"]
-[ext_resource type="AudioStream" uid="uid://dlde0j8qc88e3" path="res://assets/characters/mouse/jump.wav" id="19_qeqmh"]
-[ext_resource type="AudioStream" uid="uid://dpnmohl51g6cd" path="res://assets/collectibles/cheese/eating.wav" id="20_82v0j"]
-[ext_resource type="AudioStream" uid="uid://d6fci63x2alq" path="res://assets/collectibles/pills/health.wav" id="21_qgc5r"]
+[ext_resource type="AudioStream" uid="uid://df14mkf2nk05j" path="res://assets/characters/mouse/walking.wav" id="14_x6vs6"]
+[ext_resource type="AudioStream" uid="uid://bmmcyel1p7l5d" path="res://assets/characters/mouse/falling.wav" id="15_xmuk8"]
+[ext_resource type="AudioStream" uid="uid://dydk8ikkgkfpf" path="res://assets/characters/mouse/attack_1.wav" id="16_k66u4"]
+[ext_resource type="AudioStream" uid="uid://eerdamloixlh" path="res://assets/characters/mouse/attack_2.wav" id="17_5gtr8"]
+[ext_resource type="AudioStream" uid="uid://mb7cbtiyvkna" path="res://assets/characters/mouse/damaged.wav" id="18_0o1sa"]
+[ext_resource type="AudioStream" uid="uid://ctki48fqyyyyt" path="res://assets/characters/mouse/jump.wav" id="19_qeqmh"]
+[ext_resource type="AudioStream" uid="uid://dpvim4pji3jgo" path="res://assets/collectibles/cheese/eating.wav" id="20_82v0j"]
+[ext_resource type="AudioStream" uid="uid://cqasb1t4dkhpb" path="res://assets/collectibles/pills/health.wav" id="21_qgc5r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nch0m"]
 atlas = ExtResource("4_uplh7")
@@ -646,7 +646,6 @@ animation = &"attack_left"
 speed_scale = 2.0
 
 [node name="camera_2d" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
 [node name="collision" type="CollisionShape2D" parent="."]
