@@ -12,7 +12,7 @@ func _ready() -> void:
 		world.update_world_state()
 	
 	$player_icon.global_position = worlds[current_world].global_position
-	animation_player.play("cloud")
+	#animation_player.play("cloud")
 
 func _input(event: InputEvent) -> void:
 	if move_tween and move_tween.is_running():
