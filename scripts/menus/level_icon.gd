@@ -18,7 +18,7 @@ func _ready() -> void:
 	add_to_group("level_icons")
 	if not Engine.is_editor_hint():
 		update_level_state()
-	$label.text = "Level " + str(level_name)
+	#$label.text = "Level " + str(level_name)
 
 func update_level_state() -> void:
 	var save_data = save_manager.load_progress()
@@ -51,7 +51,7 @@ func update_level_state() -> void:
 
 func modulate_level(color: Color) -> void:
 	$level_icon.modulate = color
-	$label.modulate = color
+	#$label.modulate = color
 
 func display_stars(star_count: int) -> void:
 	var star_nodes = [$star_1, $star_2, $star_3]

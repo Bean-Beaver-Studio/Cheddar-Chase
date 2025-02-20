@@ -15,7 +15,7 @@ func _ready() -> void:
 			break
 	
 	$player_icon.global_position = current_level.global_position
-	animation_player.play("cloud")
+	#animation_player.play("cloud")
 
 func _input(event: InputEvent) -> void:
 	if move_tween and move_tween.is_running():
