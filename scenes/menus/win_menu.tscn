@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bpw6urgdij01f"]
 
 [ext_resource type="Script" path="res://scripts/menus/win_menu.gd" id="1_5b8ax"]
-[ext_resource type="FontFile" uid="uid://dwxiyviu3pln4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_ab6rm"]
-[ext_resource type="Texture2D" uid="uid://cgv6rv2xnnj05" path="res://assets/testlevel/star_filled.png" id="3_4lvc3"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_ab6rm"]
+[ext_resource type="Texture2D" uid="uid://dw25s05pam7n1" path="res://assets/testlevel/star_filled.png" id="3_4lvc3"]
 [ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="4_5138u"]
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="5_tiabg"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="6_nuaq8"]
@@ -42,63 +42,63 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = -244.0
-offset_right = 204.0
-offset_bottom = -180.0
+offset_left = -51.0
+offset_top = -64.0
+offset_right = 51.0
+offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_ab6rm")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 16
 text = "YOU WIN!"
 
 [node name="complete_label" type="Label" parent="window/win_label"]
 layout_mode = 0
-offset_left = -266.0
-offset_top = 122.0
-offset_right = 130.0
-offset_bottom = 154.0
+offset_left = -63.0
+offset_top = 31.0
+offset_right = 72.0
+offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("1_ab6rm")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Completed Level"
 
 [node name="star_1" type="Sprite2D" parent="window/win_label/complete_label"]
 unique_name_in_owner = true
-position = Vector2(917, 10)
-scale = Vector2(8, 8)
+position = Vector2(220, 2)
+scale = Vector2(2, 2)
 texture = ExtResource("3_4lvc3")
 
 [node name="damage_label" type="Label" parent="window/win_label"]
 layout_mode = 0
-offset_left = -266.0
-offset_top = 232.0
-offset_right = -18.0
-offset_bottom = 264.0
+offset_left = -63.0
+offset_top = 57.0
+offset_right = 72.0
+offset_bottom = 65.0
 theme_override_fonts/font = ExtResource("1_ab6rm")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "No Damage"
 
 [node name="star_2" type="Sprite2D" parent="window/win_label/damage_label"]
 unique_name_in_owner = true
-position = Vector2(917, 10)
-scale = Vector2(8, 8)
+position = Vector2(220, 2)
+scale = Vector2(2, 2)
 texture = ExtResource("3_4lvc3")
 
 [node name="time_label" type="Label" parent="window/win_label"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -266.0
-offset_top = 340.0
-offset_right = 274.0
-offset_bottom = 372.0
+offset_left = -63.0
+offset_top = 83.0
+offset_right = 72.0
+offset_bottom = 91.0
 theme_override_fonts/font = ExtResource("1_ab6rm")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Time: 00:00.00 / 00:00"
 
 [node name="star_3" type="Sprite2D" parent="window/win_label/time_label"]
 unique_name_in_owner = true
-position = Vector2(917, 10)
-scale = Vector2(8, 8)
+position = Vector2(220, 2)
+scale = Vector2(2, 2)
 texture = ExtResource("3_4lvc3")
 
 [node name="return_button" type="Button" parent="window"]
@@ -108,16 +108,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -445.0
-offset_top = 199.0
-offset_right = 451.0
-offset_bottom = 271.0
+offset_left = -76.0
+offset_top = 48.91
+offset_right = 76.0
+offset_bottom = 62.91
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ab6rm")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("4_5138u")
 theme_override_styles/pressed = ExtResource("5_tiabg")
 theme_override_styles/normal = ExtResource("6_nuaq8")

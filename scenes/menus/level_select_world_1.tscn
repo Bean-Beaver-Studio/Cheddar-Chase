@@ -44,27 +44,27 @@ texture = SubResource("GradientTexture2D_tkgwk")
 
 [node name="house" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = -151.0
-offset_top = -87.0
-offset_right = -23.0
-offset_bottom = -23.0
+offset_left = 55.0
+offset_top = -157.0
+offset_right = 183.0
+offset_bottom = -93.0
 texture = ExtResource("2_cmu4o")
 
 [node name="level_icon1" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = -136.0
-offset_top = 53.0
-offset_right = -136.0
-offset_bottom = 53.0
+offset_left = -125.0
+offset_top = 38.0
+offset_right = -125.0
+offset_bottom = 38.0
 next_scene_path = "res://scenes/levels/level_1.tscn"
 next_level_up = NodePath("../level_icon2")
 
 [node name="level_icon2" parent="." node_paths=PackedStringArray("next_level_up", "next_level_down", "next_level_right") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = -92.0
-offset_top = 19.0
-offset_right = -92.0
-offset_bottom = 19.0
+offset_left = -126.0
+offset_top = -7.0
+offset_right = -126.0
+offset_bottom = -7.0
 level_name = "2"
 next_scene_path = "res://scenes/levels/level_2.tscn"
 next_level_up = NodePath("../level_icon2B")
@@ -73,20 +73,20 @@ next_level_right = NodePath("../level_icon3")
 
 [node name="level_icon2B" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = -92.0
-offset_top = 53.0
-offset_right = -92.0
-offset_bottom = 53.0
+offset_left = -124.0
+offset_top = -55.0
+offset_right = -124.0
+offset_bottom = -55.0
 level_name = "2B"
 next_scene_path = "res://scenes/levels/level_2B.tscn"
 next_level_down = NodePath("../level_icon2")
 
 [node name="level_icon3" parent="." node_paths=PackedStringArray("next_level_left", "next_level_right") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = -48.0
-offset_top = 53.0
-offset_right = -48.0
-offset_bottom = 53.0
+offset_left = -63.0
+offset_top = -7.0
+offset_right = -63.0
+offset_bottom = -7.0
 level_name = "3"
 next_scene_path = "res://scenes/levels/level_3.tscn"
 next_level_left = NodePath("../level_icon2")
@@ -94,10 +94,10 @@ next_level_right = NodePath("../level_icon4")
 
 [node name="level_icon4" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left", "next_level_right") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = -4.0
-offset_top = 53.0
-offset_right = -4.0
-offset_bottom = 53.0
+offset_left = -1.0
+offset_top = -6.0
+offset_right = -1.0
+offset_bottom = -6.0
 level_name = "4"
 next_scene_path = "res://scenes/levels/level_4.tscn"
 next_level_up = NodePath("../level_icon4B")
@@ -106,20 +106,20 @@ next_level_right = NodePath("../level_icon5")
 
 [node name="level_icon4B" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = -6.0
-offset_top = 17.0
-offset_right = -6.0
-offset_bottom = 17.0
+offset_left = -2.0
+offset_top = -53.0
+offset_right = -2.0
+offset_bottom = -53.0
 level_name = "4B"
 next_scene_path = "res://scenes/levels/level_4B.tscn"
 next_level_down = NodePath("../level_icon4")
 
 [node name="level_icon5" parent="." node_paths=PackedStringArray("next_level_up", "next_level_down", "next_level_left", "next_level_right") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = 40.0
-offset_top = 53.0
-offset_right = 40.0
-offset_bottom = 53.0
+offset_left = 63.0
+offset_top = -6.0
+offset_right = 63.0
+offset_bottom = -6.0
 level_name = "5"
 next_scene_path = "res://scenes/levels/level_5.tscn"
 next_level_up = NodePath("../level_icon5B")
@@ -129,20 +129,20 @@ next_level_right = NodePath("../level_icon6")
 
 [node name="level_icon5B" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = 40.0
-offset_top = 16.0
-offset_right = 40.0
-offset_bottom = 16.0
+offset_left = 63.0
+offset_top = -51.0
+offset_right = 63.0
+offset_bottom = -51.0
 level_name = "5B"
 next_scene_path = "res://scenes/levels/level_5B.tscn"
 next_level_down = NodePath("../level_icon5")
 
 [node name="level_icon5C" parent="." node_paths=PackedStringArray("next_level_up", "next_level_right") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = 37.0
-offset_top = -22.0
-offset_right = 37.0
-offset_bottom = -22.0
+offset_left = 58.0
+offset_top = 47.0
+offset_right = 58.0
+offset_bottom = 47.0
 level_name = "5C"
 next_scene_path = "res://scenes/levels/level_5C.tscn"
 next_level_up = NodePath("../level_icon5")
@@ -150,20 +150,20 @@ next_level_right = NodePath("../level_icon5D")
 
 [node name="level_icon5D" parent="." node_paths=PackedStringArray("next_level_left") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = 38.0
-offset_top = -62.0
-offset_right = 38.0
-offset_bottom = -62.0
+offset_left = 127.0
+offset_top = 50.0
+offset_right = 127.0
+offset_bottom = 50.0
 level_name = "5D"
 next_scene_path = "res://scenes/levels/level_5D.tscn"
 next_level_left = NodePath("../level_icon5C")
 
 [node name="level_icon6" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = 85.0
-offset_top = 53.0
-offset_right = 85.0
-offset_bottom = 53.0
+offset_left = 129.0
+offset_top = -2.0
+offset_right = 129.0
+offset_bottom = -2.0
 level_name = "6"
 next_scene_path = "res://scenes/levels/level_6.tscn"
 next_level_up = NodePath("../level_icon7")
@@ -171,10 +171,10 @@ next_level_left = NodePath("../level_icon5")
 
 [node name="level_icon7" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
-offset_left = 130.0
-offset_top = 53.0
-offset_right = 130.0
-offset_bottom = 53.0
+offset_left = 127.0
+offset_top = -50.0
+offset_right = 127.0
+offset_bottom = -50.0
 level_name = "7"
 next_scene_path = "res://scenes/levels/level_7.tscn"
 next_level_down = NodePath("../level_icon6")
