@@ -48,6 +48,6 @@ func _input(event: InputEvent) -> void:
 
 func tween_icon():
 	move_tween = get_tree().create_tween()
-	move_tween.tween_property($player_icon, "global_position", current_level.global_position, 0.6).set_trans(Tween.TRANS_SINE)
+	move_tween.tween_property($player_icon, "global_position", current_level.global_position, 0.1).set_trans(Tween.TRANS_SINE)
 	# Update the current level in game_data when moving
 	game_data.current_level_icon_name = current_level.level_name
