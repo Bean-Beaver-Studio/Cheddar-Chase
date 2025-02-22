@@ -40,4 +40,4 @@ func _input(event: InputEvent) -> void:
 
 func tween_icon():
 	move_tween = get_tree().create_tween()
-	move_tween.tween_property($player_icon, "global_position", worlds[current_world].global_position, 0.5).set_trans(Tween.TRANS_SINE)
+	move_tween.tween_property($player_icon, "global_position", worlds[current_world].global_position, 0.1).set_trans(Tween.TRANS_SINE)
