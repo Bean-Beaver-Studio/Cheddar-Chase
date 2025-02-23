@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://cuy32wt5xiix3"]
+
+[ext_resource type="Texture2D" uid="uid://b57806antj345" path="res://assets/characters/mouse/diffuse/roll.png" id="1_t8ot7"]
+[ext_resource type="Texture2D" uid="uid://cxw178hceynw3" path="res://assets/characters/mouse/normal/roll_normal.png" id="2_ku2k0"]
+
+[resource]
+diffuse_texture = ExtResource("1_t8ot7")
+normal_texture = ExtResource("2_ku2k0")

@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://dk7urhliun8t5"]
+
+[ext_resource type="Texture2D" uid="uid://cknwxxkqd2r1y" path="res://assets/characters/mouse/diffuse/attack_left.png" id="1_x6agn"]
+[ext_resource type="Texture2D" uid="uid://ojxdyk8ptpxv" path="res://assets/characters/mouse/normal/attack_left_normal.png" id="2_y610j"]
+
+[resource]
+diffuse_texture = ExtResource("1_x6agn")
+normal_texture = ExtResource("2_y610j")
