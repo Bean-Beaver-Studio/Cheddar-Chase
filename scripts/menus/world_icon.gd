@@ -11,6 +11,7 @@ func _ready() -> void:
 		add_to_group("world_icons")
 		update_world_state()
 	$label.text = "World " + str(world_index)
+	$shadow.text = "World " + str(world_index)
 
 func update_world_state() -> void:
 	var progress_data = save_manager.load_progress()

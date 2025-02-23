@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbh0v2p385ld2"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_a0g6p"]
-[ext_resource type="FontFile" uid="uid://dwxiyviu3pln4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_hsk0x"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_hsk0x"]
 [ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="3_2clks"]
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="4_2jajv"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="5_b7xok"]
@@ -10,15 +10,9 @@
 script = ExtResource("1_a0g6p")
 
 [node name="window" type="ColorRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -494.0
-offset_top = -228.5
-offset_right = 494.0
-offset_bottom = 228.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.74902)
@@ -30,14 +24,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -210.0
-offset_top = -153.0
-offset_right = 210.0
-offset_bottom = -57.0
+offset_left = -52.0
+offset_top = -36.0
+offset_right = 53.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_hsk0x")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 24
 text = "Pause"
 
 [node name="resume_button" type="Button" parent="window"]
@@ -47,16 +41,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -438.0
-offset_top = -36.0
-offset_right = -16.0
-offset_bottom = 36.0
+offset_left = -74.0
+offset_top = -7.0
+offset_right = -6.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_hsk0x")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("3_2clks")
 theme_override_styles/pressed = ExtResource("4_2jajv")
 theme_override_styles/normal = ExtResource("5_b7xok")
@@ -69,16 +63,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 16.0
-offset_top = -36.0
-offset_right = 438.0
-offset_bottom = 36.0
+offset_left = 6.0
+offset_top = -7.0
+offset_right = 74.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_hsk0x")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("3_2clks")
 theme_override_styles/pressed = ExtResource("4_2jajv")
 theme_override_styles/normal = ExtResource("5_b7xok")
@@ -91,16 +85,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = 67.0
-offset_right = 211.0
-offset_bottom = 139.0
+offset_left = -33.0
+offset_top = 12.0
+offset_right = 35.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_hsk0x")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("3_2clks")
 theme_override_styles/pressed = ExtResource("4_2jajv")
 theme_override_styles/normal = ExtResource("5_b7xok")
