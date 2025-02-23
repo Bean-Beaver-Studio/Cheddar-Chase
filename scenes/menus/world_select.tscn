@@ -11,8 +11,8 @@ colors = PackedColorArray(0.311012, 0.636814, 1, 1, 1, 0.735299, 0.653655, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_stskm"]
 gradient = SubResource("Gradient_3uvam")
-width = 320
-height = 180
+width = 640
+height = 360
 fill_from = Vector2(0.328671, 0)
 fill_to = Vector2(0.835664, 1)
 
@@ -29,15 +29,9 @@ script = ExtResource("1_ppa2h")
 
 [node name="sky" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_stskm")
@@ -100,7 +94,7 @@ world_index = 5
 
 [node name="player_icon" parent="." instance=ExtResource("3_u4mso")]
 layout_mode = 1
-offset_left = 166.0
-offset_top = -88.0
-offset_right = 198.0
-offset_bottom = -56.0
+offset_left = 328.0
+offset_top = -173.0
+offset_right = 360.0
+offset_bottom = -141.0

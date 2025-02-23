@@ -11,8 +11,8 @@ colors = PackedColorArray(0.311012, 0.636814, 1, 1, 1, 0.735299, 0.653655, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_tkgwk"]
 gradient = SubResource("Gradient_v8ado")
-width = 320
-height = 180
+width = 640
+height = 360
 fill_from = Vector2(0.328671, 0)
 fill_to = Vector2(0.835664, 1)
 
@@ -44,10 +44,10 @@ texture = SubResource("GradientTexture2D_tkgwk")
 
 [node name="house" type="TextureRect" parent="."]
 layout_mode = 1
-offset_left = 55.0
-offset_top = -157.0
-offset_right = 183.0
-offset_bottom = -93.0
+offset_left = 330.0
+offset_top = -171.0
+offset_right = 458.0
+offset_bottom = -107.0
 texture = ExtResource("2_cmu4o")
 
 [node name="level_icon1" parent="." node_paths=PackedStringArray("next_level_up") instance=ExtResource("2_m0ttj")]
@@ -182,7 +182,7 @@ next_level_down = NodePath("../level_icon6")
 [node name="player_icon" parent="." instance=ExtResource("3_n6nib")]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 175.0
-offset_top = -120.0
-offset_right = 207.0
-offset_bottom = -88.0
+offset_left = 330.0
+offset_top = -103.0
+offset_right = 362.0
+offset_bottom = -71.0
