@@ -1,30 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfwnyu2q3bdeu"]
+[gd_scene load_steps=5 format=3 uid="uid://bfwnyu2q3bdeu"]
 
-[ext_resource type="FontFile" uid="uid://dwxiyviu3pln4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_0ktlv"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_0ktlv"]
 [ext_resource type="Script" path="res://scripts/menus/world_icon.gd" id="1_6q4mi"]
 [ext_resource type="PackedScene" uid="uid://pckx6wtppot6" path="res://scenes/menus/level_select_world_1.tscn" id="2_myhob"]
-[ext_resource type="Texture2D" uid="uid://sku0kefliyju" path="res://assets/testlevel/level_icon.png" id="4_il0ua"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ybx1b"]
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://b1vwiw1wv6j1f" path="res://assets/testlevel/level_icon.png" id="4_il0ua"]
 
 [node name="world_icon" type="Control"]
 layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6q4mi")
+level_select_packed = ExtResource("2_myhob")
+
+[node name="shadow" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+offset_left = -21.78
+offset_top = -12.45
+offset_right = 24.22
+offset_bottom = -4.45
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
-script = ExtResource("1_6q4mi")
-level_select_packed = ExtResource("2_myhob")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0ktlv")
+theme_override_font_sizes/font_size = 8
+text = "World 1"
 
 [node name="label" type="Label" parent="."]
 layout_mode = 1
@@ -33,16 +36,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -36.0
-offset_right = 46.0
-offset_bottom = -13.0
+offset_left = -23.0
+offset_top = -12.5
+offset_right = 23.0
+offset_bottom = -4.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_0ktlv")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "World 1"
-label_settings = SubResource("LabelSettings_ybx1b")
 
 [node name="texture_rect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,10 +53,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -32.0
-offset_top = -32.0
-offset_right = 32.0
-offset_bottom = 32.0
+offset_left = -16.0
+offset_top = -10.0
+offset_right = 16.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_il0ua")

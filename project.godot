@@ -24,6 +24,14 @@ functions="*res://scripts/functions.gd"
 music_manager="*res://scenes/tools/music_manager/music_manager.tscn"
 save_manager="*res://scripts/tools/save_manager.gd"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=4
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
 [file_customization]
 
 folder_colors={
