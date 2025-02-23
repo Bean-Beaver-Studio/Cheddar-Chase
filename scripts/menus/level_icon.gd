@@ -1,4 +1,4 @@
-extends Control
+extends Button
 class_name LevelIcon
 
 @export var level_name: String = "1"

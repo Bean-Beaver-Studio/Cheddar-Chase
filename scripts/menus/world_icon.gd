@@ -1,5 +1,6 @@
 @tool
-extends Control
+extends Button
+class_name WorldButton
 
 @export var world_index: int = 1
 @export var level_select_packed: PackedScene = load("res://scenes/menus/level_select_world_1.tscn")
