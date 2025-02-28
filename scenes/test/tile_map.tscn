@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://o8sj1thyh5lx"]
 
 [ext_resource type="Texture2D" uid="uid://b2dgo7p25slr" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="1_qfyt2"]
-[ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/furnishings/couch.png" id="2_y46m5"]
+[ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="2_y46m5"]
 [ext_resource type="PackedScene" uid="uid://y16vsgpfcas8" path="res://scenes/tools/tile_map_layers/room_layer.tscn" id="3_fn64f"]
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="4_ao24x"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="5_1egfr"]
