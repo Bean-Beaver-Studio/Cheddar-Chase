@@ -1,12 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcfj1ji8t2a6c"]
+[gd_scene load_steps=18 format=3 uid="uid://dcfj1ji8t2a6c"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/mouse_trap.gd" id="1_bmycu"]
-[ext_resource type="Texture2D" uid="uid://6wq0yftqleu" path="res://assets/characters/enemies/mouse_trap/idle.png" id="1_rlinn"]
-[ext_resource type="Texture2D" uid="uid://c4igs0104hwas" path="res://assets/characters/enemies/bug_blue/death.png" id="2_1a1kj"]
-[ext_resource type="Texture2D" uid="uid://b3p2cqcnb4wmg" path="res://assets/characters/enemies/mouse_trap/trapped_bug.png" id="2_g737m"]
-[ext_resource type="Texture2D" uid="uid://dp8ue34i5iu0l" path="res://assets/characters/enemies/mouse_trap/trapped.png" id="3_0g03a"]
-[ext_resource type="Texture2D" uid="uid://dtco1gtjwfdg7" path="res://assets/characters/enemies/mouse_trap/pow.png" id="4_3cgce"]
-[ext_resource type="AudioStream" uid="uid://7krar8yrcxkb" path="res://assets/characters/enemies/mouse_trap/slap.wav" id="7_288mg"]
+[ext_resource type="Texture2D" uid="uid://cneckq5viqkpc" path="res://assets/characters/enemies/mouse_trap/idle.png" id="1_rlinn"]
+[ext_resource type="Texture2D" uid="uid://dfy86ke67cjnu" path="res://assets/characters/enemies/mouse_trap/trapped_bug.png" id="2_g737m"]
+[ext_resource type="Texture2D" uid="uid://dhfo7qhnwmc5d" path="res://assets/characters/enemies/mouse_trap/trapped.png" id="3_0g03a"]
+[ext_resource type="Texture2D" uid="uid://2vgp7ej5is50" path="res://assets/characters/enemies/mouse_trap/pow.png" id="4_3cgce"]
+[ext_resource type="AudioStream" uid="uid://cpasawn4bmt6g" path="res://assets/characters/enemies/mouse_trap/slap.wav" id="7_288mg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ec55s"]
 atlas = ExtResource("2_g737m")
@@ -48,7 +47,6 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j27k0"]
-atlas = ExtResource("2_1a1kj")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edmcl"]
@@ -104,7 +102,7 @@ script = ExtResource("1_bmycu")
 
 [node name="animated_sprite_trap" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tk7wu")
-animation = &"bug_trapped"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="animated_sprite_pow" type="AnimatedSprite2D" parent="."]

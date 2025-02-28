@@ -20,4 +20,3 @@ void light() {
 	}
 	LIGHT = vec4(LIGHT_COLOR.rgb * COLOR.rgb * LIGHT_ENERGY * toon, LIGHT_COLOR.a);
 }
-

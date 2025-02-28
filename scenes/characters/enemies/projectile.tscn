@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/projectile.gd" id="1_ul6du"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="2_4j5bj"]
-[ext_resource type="Texture2D" uid="uid://ulrqyk4pjd0h" path="res://assets/characters/enemies/projectile.png" id="2_dgapk"]
+[ext_resource type="Texture2D" uid="uid://gl1rq3jx1t1q" path="res://assets/characters/enemies/bug_flying_shooter/projectile.png" id="2_dgapk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c84pn"]
 atlas = ExtResource("2_dgapk")

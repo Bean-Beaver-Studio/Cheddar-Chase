@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfwnyu2q3bdeu"]
 
-[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_0ktlv"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_0ktlv"]
 [ext_resource type="Script" path="res://scripts/menus/world_icon.gd" id="1_6q4mi"]
 [ext_resource type="PackedScene" uid="uid://pckx6wtppot6" path="res://scenes/menus/level_select_world_1.tscn" id="2_myhob"]
-[ext_resource type="Texture2D" uid="uid://b1vwiw1wv6j1f" path="res://assets/testlevel/level_icon.png" id="4_il0ua"]
+[ext_resource type="Texture2D" uid="uid://b1vwiw1wv6j1f" path="res://assets/menus/icons/level_icon.png" id="4_il0ua"]
 
 [node name="world_icon" type="Control"]
 layout_mode = 3

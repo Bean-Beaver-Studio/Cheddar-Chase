@@ -1,14 +1,14 @@
 [gd_scene load_steps=30 format=3 uid="uid://bd00qhbwn5hyd"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/bug_flying_shooter.gd" id="1_kf0hq"]
-[ext_resource type="Texture2D" uid="uid://dklb8ebvo002p" path="res://assets/characters/enemies/bug_flying_shooter/damaged.png" id="1_w7cbt"]
-[ext_resource type="Texture2D" uid="uid://bflavi12imcxt" path="res://assets/characters/enemies/bug_flying_shooter/death.png" id="2_43275"]
-[ext_resource type="Texture2D" uid="uid://dr6q11t1fsynk" path="res://assets/characters/enemies/bug_flying_shooter/walk.png" id="3_c34e6"]
-[ext_resource type="Texture2D" uid="uid://c20tfj8jwtkiq" path="res://assets/characters/enemies/bug_flying_shooter/shoot.png" id="4_bwrbs"]
+[ext_resource type="Texture2D" uid="uid://dq1og1rxrsm6b" path="res://assets/characters/enemies/bug_flying_shooter/damaged.png" id="1_w7cbt"]
+[ext_resource type="Texture2D" uid="uid://yc3t6sdjmudq" path="res://assets/characters/enemies/bug_flying_shooter/death.png" id="2_43275"]
+[ext_resource type="Texture2D" uid="uid://bl0ftguxkokbw" path="res://assets/characters/enemies/bug_flying_shooter/walk.png" id="3_c34e6"]
+[ext_resource type="Texture2D" uid="uid://begifbjlohjmx" path="res://assets/characters/enemies/bug_flying_shooter/shoot.png" id="4_bwrbs"]
 [ext_resource type="PackedScene" uid="uid://cxb8foogagtu4" path="res://scenes/tools/hurt_box.tscn" id="4_phb5x"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="5_wnptm"]
-[ext_resource type="AudioStream" uid="uid://b5tvabuxmmmar" path="res://assets/characters/enemies/bug_damaged.wav" id="8_ypt1f"]
-[ext_resource type="AudioStream" uid="uid://dxcehxdnqeofc" path="res://assets/characters/enemies/bug_death.wav" id="9_r1vnj"]
+[ext_resource type="AudioStream" uid="uid://2jdbt2v3kslj" path="res://assets/characters/enemies/bug_damaged.wav" id="8_ypt1f"]
+[ext_resource type="AudioStream" uid="uid://cqrdyiny05iwb" path="res://assets/characters/enemies/bug_death.wav" id="9_r1vnj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_evqfd"]
 atlas = ExtResource("1_w7cbt")
@@ -151,6 +151,7 @@ radius = 13.0384
 radius = 9.0
 
 [node name="bug_flying_shooter" type="CharacterBody2D"]
+position = Vector2(2.78, 0)
 collision_layer = 4
 collision_mask = 9
 script = ExtResource("1_kf0hq")

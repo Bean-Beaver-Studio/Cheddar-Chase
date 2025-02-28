@@ -11,11 +11,11 @@ extends CanvasLayer
 @onready var star_2: Sprite2D = $anchor_star/star_2
 @onready var star_3: Sprite2D = $anchor_star/star_3
 
-var heart_filled: Texture2D = preload("res://assets/heart/heart-filled.png")
-var heart_empty: Texture2D = preload("res://assets/heart/heart-empty.png")
+var heart_filled: Texture2D = preload("res://assets/menus/icons/heart-filled.png")
+var heart_empty: Texture2D = preload("res://assets/menus/icons/heart-empty.png")
 
-var star_filled: Texture2D = preload("res://assets/testlevel/star-hud-filled.png")
-var star_empty: Texture2D = preload("res://assets/testlevel/star-hud-empty.png")
+var star_filled: Texture2D = preload("res://assets/menus/icons/star-hud-filled.png")
+var star_empty: Texture2D = preload("res://assets/menus/icons/star-hud-empty.png")
 
 func update_timer(time_passed: float, level_star_time: int) -> void:
 	var minutes = int(time_passed / 60)

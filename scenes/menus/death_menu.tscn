@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://86tsdexohbg4"]
 
 [ext_resource type="Script" path="res://scripts/menus/death_menu.gd" id="1_qinvd"]
-[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_vrx8g"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_vrx8g"]
 
 [node name="death_menu" type="CanvasLayer"]
 script = ExtResource("1_qinvd")

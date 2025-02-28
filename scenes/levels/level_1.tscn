@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cbh0v2p385ld2" path="res://scenes/menus/pause_menu.tscn" id="6_t3yyc"]
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="6_wgxv6"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="7_audga"]
-[ext_resource type="FontFile" uid="uid://co7nycwx35e6j" path="res://assets/tools/fonts/PixelOperator8-Bold.ttf" id="9_fu6ql"]
+[ext_resource type="FontFile" uid="uid://2byqgp7tomj2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="9_fu6ql"]
 [ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/heart.tscn" id="10_jq64k"]
-[ext_resource type="FontFile" uid="uid://dwxiyviu3pln4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="10_lygur"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="10_lygur"]
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="11_lbb3u"]
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="12_vwfu5"]
 [ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="13_jvws1"]
@@ -132,7 +132,7 @@ position = Vector2(688, -16)
 [node name="cheese_2" parent="cheeses" groups=["cheeses"] instance=ExtResource("11_lbb3u")]
 position = Vector2(1328, -16)
 
-[node name="pill" parent="cheeses" instance=ExtResource("10_jq64k")]
+[node name="health" parent="cheeses" instance=ExtResource("10_jq64k")]
 position = Vector2(1264, -16)
 
 [node name="enemies" type="Node" parent="."]

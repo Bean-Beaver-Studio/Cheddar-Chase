@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://dnlv8wuw8y7et"]
+[gd_scene load_steps=117 format=3 uid="uid://dnlv8wuw8y7et"]
 
 [ext_resource type="Script" path="res://scripts/characters/mouse/player.gd" id="1_p3jmh"]
 [ext_resource type="PackedScene" uid="uid://cq501sdvos586" path="res://scenes/tools/hud.tscn" id="2_ynafe"]
@@ -21,7 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://mb7cbtiyvkna" path="res://assets/characters/mouse/audio/damaged.wav" id="18_0o1sa"]
 [ext_resource type="AudioStream" uid="uid://ctki48fqyyyyt" path="res://assets/characters/mouse/audio/jump.wav" id="19_qeqmh"]
 [ext_resource type="AudioStream" uid="uid://dpvim4pji3jgo" path="res://assets/collectibles/cheese/eating.wav" id="20_82v0j"]
-[ext_resource type="AudioStream" uid="uid://cqasb1t4dkhpb" path="res://assets/collectibles/pills/health.wav" id="21_qgc5r"]
+[ext_resource type="AudioStream" uid="uid://cqasb1t4dkhpb" path="res://assets/collectibles/health/health.wav" id="21_qgc5r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ig76"]
 shader = ExtResource("3_2vhql")
@@ -699,6 +699,9 @@ radius = 8.33333
 [sub_resource type="CircleShape2D" id="CircleShape2D_vktk8"]
 radius = 17.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f3511"]
+polygon = PackedVector2Array(-3, -6, -4, -5, -6, -2, -6, 2, -4, 5, 1, 6, 4, 5, 5, 2, 5, -3, 4, -5, 1, -6)
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 137
@@ -775,5 +778,8 @@ bus = &"SFX"
 [node name="audio_heart" type="AudioStreamPlayer2D" parent="audio"]
 stream = ExtResource("21_qgc5r")
 bus = &"SFX"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_f3511")
 
 [connection signal="timeout" from="invincibility_timer" to="." method="_on_invincibility_timer_timeout"]
