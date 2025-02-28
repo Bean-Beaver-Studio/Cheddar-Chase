@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=4 uid="uid://cagii1m6affwl"]
 
-[ext_resource type="Texture2D" uid="uid://b2g3t3cvuuxeg" path="res://assets/tileset/tile_map_decoration/tile_map_decoration.png" id="1_5a8ep"]
+[ext_resource type="Texture2D" uid="uid://cjsamx8fxugcy" path="res://assets/tileset/tile_map_decoration/tile_map_decoration_canvas_texture.tres" id="1_mcxkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wjsq"]
-texture = ExtResource("1_5a8ep")
+texture = ExtResource("1_mcxkx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
