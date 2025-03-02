@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/projectile.gd" id="1_ul6du"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="2_4j5bj"]
-[ext_resource type="Texture2D" uid="uid://gl1rq3jx1t1q" path="res://assets/characters/enemies/bug_flying_shooter/projectile.png" id="2_dgapk"]
+[ext_resource type="Texture2D" uid="uid://cxuvb8fa1m5tk" path="res://assets/characters/enemies/bug_flying_shooter/canvas_texture/projectile_canvas_texture.tres" id="2_nghuy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c84pn"]
-atlas = ExtResource("2_dgapk")
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0ht7"]
+atlas = ExtResource("2_nghuy")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jnio5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c84pn")
+"texture": SubResource("AtlasTexture_h0ht7")
 }],
 "loop": true,
 "name": &"projectile",
