@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://c6cn86w5jqssc"]
+
+[ext_resource type="Texture2D" uid="uid://cneckq5viqkpc" path="res://assets/characters/enemies/mouse_trap/diffuse/idle.png" id="1_mgski"]
+[ext_resource type="Texture2D" uid="uid://ehfg6cakjdpr" path="res://assets/characters/enemies/mouse_trap/normal/idle_normal.png" id="2_0y30c"]
+
+[resource]
+diffuse_texture = ExtResource("1_mgski")
+normal_texture = ExtResource("2_0y30c")

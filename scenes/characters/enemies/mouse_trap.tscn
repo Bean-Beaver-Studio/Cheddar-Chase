@@ -1,29 +1,29 @@
 [gd_scene load_steps=18 format=3 uid="uid://dcfj1ji8t2a6c"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/mouse_trap.gd" id="1_bmycu"]
-[ext_resource type="Texture2D" uid="uid://cneckq5viqkpc" path="res://assets/characters/enemies/mouse_trap/idle.png" id="1_rlinn"]
-[ext_resource type="Texture2D" uid="uid://dfy86ke67cjnu" path="res://assets/characters/enemies/mouse_trap/trapped_bug.png" id="2_g737m"]
-[ext_resource type="Texture2D" uid="uid://dhfo7qhnwmc5d" path="res://assets/characters/enemies/mouse_trap/trapped.png" id="3_0g03a"]
-[ext_resource type="Texture2D" uid="uid://2vgp7ej5is50" path="res://assets/characters/enemies/mouse_trap/pow.png" id="4_3cgce"]
+[ext_resource type="Texture2D" uid="uid://ccy0twsrgy7v1" path="res://assets/characters/enemies/mouse_trap/canvas_texture/trapped_bug_canvas_texture.tres" id="2_lj876"]
+[ext_resource type="Texture2D" uid="uid://c6cn86w5jqssc" path="res://assets/characters/enemies/mouse_trap/canvas_texture/idle_canvas_texture.tres" id="3_ntr7b"]
+[ext_resource type="Texture2D" uid="uid://c1unjhhbykhdw" path="res://assets/characters/enemies/mouse_trap/canvas_texture/trapped_canvas_texture.tres" id="4_2m0s2"]
+[ext_resource type="Texture2D" uid="uid://2vgp7ej5is50" path="res://assets/characters/enemies/mouse_trap/diffuse/pow.png" id="4_3cgce"]
 [ext_resource type="AudioStream" uid="uid://cpasawn4bmt6g" path="res://assets/characters/enemies/mouse_trap/slap.wav" id="7_288mg"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ec55s"]
-atlas = ExtResource("2_g737m")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sx2k"]
+atlas = ExtResource("2_lj876")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dg02n"]
-atlas = ExtResource("1_rlinn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hexm"]
+atlas = ExtResource("3_ntr7b")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_240yr"]
-atlas = ExtResource("3_0g03a")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2gjj"]
+atlas = ExtResource("4_2m0s2")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tk7wu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ec55s")
+"texture": SubResource("AtlasTexture_2sx2k")
 }],
 "loop": false,
 "name": &"bug_trapped",
@@ -31,7 +31,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dg02n")
+"texture": SubResource("AtlasTexture_6hexm")
 }],
 "loop": false,
 "name": &"idle",
@@ -39,7 +39,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_240yr")
+"texture": SubResource("AtlasTexture_i2gjj")
 }],
 "loop": false,
 "name": &"player_trapped",
@@ -102,7 +102,7 @@ script = ExtResource("1_bmycu")
 
 [node name="animated_sprite_trap" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tk7wu")
-animation = &"idle"
+animation = &"player_trapped"
 autoplay = "idle"
 
 [node name="animated_sprite_pow" type="AnimatedSprite2D" parent="."]
