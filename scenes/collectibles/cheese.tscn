@@ -1,38 +1,38 @@
 [gd_scene load_steps=9 format=3 uid="uid://cv7e0kb2x6ro2"]
 
 [ext_resource type="Script" path="res://scripts/collectibles/cheese.gd" id="1_4ciu2"]
-[ext_resource type="Texture2D" uid="uid://bhvjo7s4kewgl" path="res://assets/collectibles/cheese/cheese.png" id="2_wbb3w"]
+[ext_resource type="Texture2D" uid="uid://cgheb67n5m8ul" path="res://assets/collectibles/cheese/canvas_texture/cheese_canvas_texture.tres" id="2_x7jqx"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fosqp"]
-atlas = ExtResource("2_wbb3w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gi01"]
+atlas = ExtResource("2_x7jqx")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k1tn5"]
-atlas = ExtResource("2_wbb3w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q2dy"]
+atlas = ExtResource("2_x7jqx")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwjpe"]
-atlas = ExtResource("2_wbb3w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gixi"]
+atlas = ExtResource("2_x7jqx")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2270a"]
-atlas = ExtResource("2_wbb3w")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtlg2"]
+atlas = ExtResource("2_x7jqx")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_53bq8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fosqp")
+"texture": SubResource("AtlasTexture_3gi01")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k1tn5")
+"texture": SubResource("AtlasTexture_6q2dy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dwjpe")
+"texture": SubResource("AtlasTexture_6gixi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2270a")
+"texture": SubResource("AtlasTexture_vtlg2")
 }],
 "loop": true,
 "name": &"idle",
