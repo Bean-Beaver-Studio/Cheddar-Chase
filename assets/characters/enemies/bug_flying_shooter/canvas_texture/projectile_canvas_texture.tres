@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://cxuvb8fa1m5tk"]
+
+[ext_resource type="Texture2D" uid="uid://gl1rq3jx1t1q" path="res://assets/characters/enemies/bug_flying_shooter/diffuse/projectile.png" id="1_wqexu"]
+[ext_resource type="Texture2D" uid="uid://8tashfv08x4c" path="res://assets/characters/enemies/bug_flying_shooter/normal/projectile_normal.png" id="2_l6fk2"]
+
+[resource]
+diffuse_texture = ExtResource("1_wqexu")
+normal_texture = ExtResource("2_l6fk2")

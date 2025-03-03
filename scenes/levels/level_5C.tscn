@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="8_0qxlb"]
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="9_amgsa"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="9_m7y3b"]
-[ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/heart.tscn" id="10_brkqb"]
+[ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/health.tscn" id="10_brkqb"]
 [ext_resource type="PackedScene" uid="uid://b6pkedphn6qas" path="res://scenes/characters/enemies/bug_green.tscn" id="11_1e8ka"]
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="12_dq7hy"]
 

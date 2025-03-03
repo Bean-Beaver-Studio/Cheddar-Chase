@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://o8sj1thyh5lx"]
+[gd_scene load_steps=16 format=4 uid="uid://o8sj1thyh5lx"]
 
-[ext_resource type="Texture2D" uid="uid://cuqwg8ely2sp7" path="res://assets/testlevel/tile_map_floor.png" id="1_qfyt2"]
-[ext_resource type="Texture2D" uid="uid://c170gtgkqeth0" path="res://assets/furnishings/couch.png" id="2_y46m5"]
+[ext_resource type="Texture2D" uid="uid://b2dgo7p25slr" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="1_qfyt2"]
+[ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="2_y46m5"]
 [ext_resource type="PackedScene" uid="uid://y16vsgpfcas8" path="res://scenes/tools/tile_map_layers/room_layer.tscn" id="3_fn64f"]
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="4_ao24x"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="5_1egfr"]
+[ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="6_rsorl"]
+[ext_resource type="Shader" path="res://scripts/tools/toon-shader.gdshader" id="7_flal7"]
+[ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="8_b48ea"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_643cg"]
+shader = ExtResource("7_flal7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ltqg"]
 texture = ExtResource("1_qfyt2")
@@ -279,14 +285,59 @@ physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_7ltqg")
 sources/1 = SubResource("TileSetAtlasSource_noeul")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ring5"]
+shader = ExtResource("7_flal7")
+
+[sub_resource type="Gradient" id="Gradient_sy2nm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l5e5o"]
+gradient = SubResource("Gradient_sy2nm")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
 [node name="tile_map" type="TileMap"]
+material = SubResource("ShaderMaterial_643cg")
+position = Vector2(-6, 24)
 tile_set = SubResource("TileSet_qagsj")
 rendering_quadrant_size = 32
 format = 2
 
 [node name="room_layer" parent="." instance=ExtResource("3_fn64f")]
+tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAABAPv/AAABAAAAAAACAPv/AAABAAAAAAADAPv/AAABAAAAAAAEAPv/AAACAAAAAAAEAPz/AAACAAEAAAAEAP3/AAACAAEAAAAEAP7/AAACAAEAAAAEAP//AAACAAEAAAD7//z/AAAAAAEAAAD7//3/AAAAAAIAAAD7//7/AAAAAAAAAAD7////AAAAAAEAAAAEAAQAAAACAAsAAAD7/wQAAAAAAAsAAAD7/wMAAAAAAAoAAAD7/wIAAAAAAAoAAAD7/wEAAAAAAAoAAAD7/wAAAAAAAAoAAAAEAAMAAAACAAoAAAAEAAIAAAACAAoAAAAEAAEAAAACAAoAAAAEAAAAAAACAAoAAAADAAQAAAABAAsAAAACAAQAAAABAAsAAAABAAQAAAABAAsAAAAAAAQAAAABAAsAAAD//wQAAAABAAsAAAD+/wQAAAABAAsAAAD9/wQAAAABAAsAAAD8/wQAAAABAAsAAAADAAMAAAABAAoAAAACAAMAAAABAAoAAAABAAMAAAABAAoAAAAAAAMAAAABAAoAAAD//wMAAAABAAoAAAD+/wMAAAABAAoAAAD9/wMAAAABAAoAAAD8/wMAAAABAAoAAAD8/wIAAAABAAoAAAD9/wIAAAABAAoAAAD+/wIAAAABAAoAAAD//wIAAAABAAoAAAAAAAIAAAABAAoAAAABAAIAAAABAAoAAAACAAIAAAABAAoAAAADAAIAAAABAAoAAAADAAEAAAABAAoAAAACAAEAAAABAAoAAAABAAEAAAABAAoAAAAAAAEAAAABAAoAAAD//wEAAAABAAoAAAD+/wEAAAABAAoAAAD9/wEAAAABAAoAAAD8/wEAAAABAAoAAAD8/wAAAAABAAoAAAD9/wAAAAABAAoAAAD+/wAAAAABAAoAAAD//wAAAAABAAoAAAAAAAAAAAABAAoAAAABAAAAAAABAAoAAAACAAAAAAABAAoAAAADAAAAAAABAAoAAAADAP//AAAIAAUAAAACAP//AAAHAAUAAAABAP//AAAGAAUAAAAAAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD9////AAABAAEAAAD8////AAABAAEAAAD8//7/AAABAAAAAAD9//7/AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAAGAAQAAAACAP7/AAAHAAQAAAADAP7/AAAIAAQAAAADAP3/AAAIAAMAAAACAP3/AAAHAAMAAAABAP3/AAAGAAMAAAAAAP3/AAABAAEAAAD///3/AAABAAEAAAD+//3/AAABAAIAAAD9//3/AAABAAIAAAD8//3/AAABAAIAAAD8//z/AAABAAEAAAD9//z/AAABAAEAAAD+//z/AAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAACAPz/AAABAAEAAAADAPz/AAABAAEAAAA=")
 
 [node name="furniture_layer" parent="." instance=ExtResource("4_ao24x")]
-tile_map_data = PackedByteArray(0, 0, 252, 255, 252, 255, 0, 0, 3, 0, 3, 0, 0, 0, 255, 255, 252, 255, 0, 0, 0, 0, 3, 0, 0, 0)
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD8//z/AAADAAMAAAD///z/AAAAAAMAAAA=")
 
 [node name="decoration_layer" parent="." instance=ExtResource("5_1egfr")]
+material = SubResource("ShaderMaterial_ring5")
+use_parent_material = true
+
+[node name="PointLight2D_with_shadow" type="PointLight2D" parent="."]
+position = Vector2(-4, -28)
+color = Color(1, 0.808533, 0.10903, 1)
+energy = 0.4
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_l5e5o")
+texture_scale = 5.0
+height = 30.0
+
+[node name="PointLight2D_without_shadow" type="PointLight2D" parent="."]
+position = Vector2(-4, -28)
+color = Color(1, 0.808533, 0.10903, 1)
+energy = 0.4
+texture = SubResource("GradientTexture2D_l5e5o")
+texture_scale = 5.0
+height = 30.0
+
+[node name="player" parent="." instance=ExtResource("6_rsorl")]
+position = Vector2(-67, -20)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(11, 22)
+color = Color(0.39237, 0.461025, 0.567382, 1)
+
+[node name="bug_blue" parent="." instance=ExtResource("8_b48ea")]

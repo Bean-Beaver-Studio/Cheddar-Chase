@@ -2,7 +2,7 @@ extends Control
 
 @onready var worlds: Array = [$world_icon1, $world_icon2, $world_icon3, $world_icon4, $world_icon5]
 @onready var main_menu_scene = load("res://scenes/menus/main_menu.tscn")
-@onready var animation_player: AnimationPlayer = $clouds/animation_player
+#@onready var animation_player: AnimationPlayer = $clouds/animation_player
 var current_world: int = 0
 var move_tween: Tween
 

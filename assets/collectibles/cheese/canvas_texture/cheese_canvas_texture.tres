@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://cgheb67n5m8ul"]
+
+[ext_resource type="Texture2D" uid="uid://c4mluriej04xl" path="res://assets/collectibles/cheese/diffuse/cheese.png" id="1_lnyss"]
+[ext_resource type="Texture2D" uid="uid://b5r0lukbyiv5" path="res://assets/collectibles/cheese/normal/cheese_normal.png" id="2_q0nbv"]
+
+[resource]
+diffuse_texture = ExtResource("1_lnyss")
+normal_texture = ExtResource("2_q0nbv")

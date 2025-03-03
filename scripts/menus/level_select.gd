@@ -2,7 +2,7 @@ extends Control
 class_name LevelSelect
 
 @onready var current_level: LevelIcon = $level_icon1
-@onready var animation_player: AnimationPlayer = $clouds/animation_player
+#@onready var animation_player: AnimationPlayer = $clouds/animation_player
 @onready var world_select_scene = load("res://scenes/menus/world_select.tscn")
 var move_tween: Tween
 

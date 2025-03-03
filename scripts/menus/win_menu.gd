@@ -9,7 +9,7 @@ extends CanvasLayer
 @onready var star_3: Sprite2D = %star_3
 @onready var time_label: Label = %time_label
 
-var empty_star_tex = preload("res://assets/testlevel/star_empty.png")
+var empty_star_tex = preload("res://assets/menus/icons/star_empty.png")
 
 @export var fade_in_time = 0.2 
 

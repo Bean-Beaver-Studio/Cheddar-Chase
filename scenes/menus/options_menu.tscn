@@ -1,11 +1,11 @@
 [gd_scene load_steps=19 format=3 uid="uid://ca7scphy8lqlb"]
 
-[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_3tl86"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_3tl86"]
 [ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_52ppb"]
 [ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="2_r63em"]
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="3_5uf0h"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="4_fk6p5"]
-[ext_resource type="Texture2D" uid="uid://cnrwsbltay4pl" path="res://assets/tools/slider-grabber.png" id="6_uj7s8"]
+[ext_resource type="Texture2D" uid="uid://cnrwsbltay4pl" path="res://assets/menus/icons/slider-grabber.png" id="6_uj7s8"]
 [ext_resource type="Script" path="res://scripts/tools/volume_slider.gd" id="7_64xbp"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]

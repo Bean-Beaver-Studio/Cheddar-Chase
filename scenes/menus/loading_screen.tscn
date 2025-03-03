@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ha8cp1hp1m8o"]
 
 [ext_resource type="Script" path="res://scripts/menus/loading_screen.gd" id="1_abrko"]
-[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="2_qk15j"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="2_qk15j"]
 
 [sub_resource type="Gradient" id="Gradient_olwj7"]
 offsets = PackedFloat32Array(0)
