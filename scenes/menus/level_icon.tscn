@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://xkbgidfk0x0m"]
 
 [ext_resource type="Script" path="res://scripts/menus/level_icon.gd" id="1_tru2s"]
-[ext_resource type="FontFile" uid="uid://c3ofm1b4hd8f4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="2_6dorg"]
-[ext_resource type="Texture2D" uid="uid://gqivq1ryt225" path="res://assets/testlevel/level_icon.png" id="3_u7auv"]
-[ext_resource type="Texture2D" uid="uid://c2uq3hgnjs5hh" path="res://assets/testlevel/star_filled.png" id="4_4gx2h"]
+[ext_resource type="FontFile" uid="uid://dm5jx6jx81a8k" path="res://assets/fonts/PixelOperator8.ttf" id="2_6dorg"]
+[ext_resource type="Texture2D" uid="uid://dp408mhttgwj8" path="res://assets/menus/icons/level_icon.png" id="3_u7auv"]
+[ext_resource type="Texture2D" uid="uid://cy7gfn1dp4jci" path="res://assets/menus/icons/star_filled.png" id="4_4gx2h"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqfrj"]
 

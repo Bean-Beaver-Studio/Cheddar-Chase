@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://c6tb2ks3hlmti"]
+
+[ext_resource type="Texture2D" uid="uid://bievaj0l6vgfx" path="res://assets/characters/mouse/diffuse/obstruct.png" id="1_86280"]
+[ext_resource type="Texture2D" uid="uid://cvvgwplm6qraw" path="res://assets/characters/mouse/normal/obstruct_normal.png" id="2_77oto"]
+
+[resource]
+diffuse_texture = ExtResource("1_86280")
+normal_texture = ExtResource("2_77oto")

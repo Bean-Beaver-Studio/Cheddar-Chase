@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cq501sdvos586"]
 
-[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_2if4o"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_2if4o"]
 [ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_20cvk"]
-[ext_resource type="Texture2D" uid="uid://cu5ug36mcdxmp" path="res://assets/heart/heart-filled.png" id="3_424o5"]
+[ext_resource type="Texture2D" uid="uid://cu5ug36mcdxmp" path="res://assets/menus/icons/heart-filled.png" id="3_424o5"]
 [ext_resource type="Texture2D" uid="uid://y3orj0xv8uj6" path="res://assets/cat/stuff/fish_icon.png" id="3_b0tdp"]
-[ext_resource type="Texture2D" uid="uid://dhbik5mwdusav" path="res://assets/testlevel/star-hud-filled.png" id="5_4i32g"]
+[ext_resource type="Texture2D" uid="uid://dhbik5mwdusav" path="res://assets/menus/icons/star-hud-filled.png" id="5_4i32g"]
 
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_20cvk")
