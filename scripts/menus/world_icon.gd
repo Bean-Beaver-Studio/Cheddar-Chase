@@ -1,5 +1,5 @@
 @tool
-extends Button
+extends Control
 class_name WorldButton
 
 @export var world_index: int = 1

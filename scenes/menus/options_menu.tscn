@@ -52,6 +52,7 @@ thickness = 8
 script = ExtResource("1_52ppb")
 
 [node name="background" type="TextureRect" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -247,10 +248,9 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="you_sure_screen" type="ColorRect" parent="background"]
+[node name="you_sure_screen" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -258,7 +258,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="you_sure_label" type="Label" parent="background/you_sure_screen"]
+[node name="you_sure_label" type="Label" parent="you_sure_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -279,7 +279,7 @@ All progress will be deleted permanently."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="yes_button" type="Button" parent="background/you_sure_screen"]
+[node name="yes_button" type="Button" parent="you_sure_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -292,11 +292,14 @@ offset_right = -27.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_right = NodePath("../no_button")
+focus_next = NodePath("../no_button")
+focus_previous = NodePath("../no_button")
 theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
 text = "Yes"
 
-[node name="no_button" type="Button" parent="background/you_sure_screen"]
+[node name="no_button" type="Button" parent="you_sure_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -309,14 +312,16 @@ offset_right = 73.0
 offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../yes_button")
+focus_next = NodePath("../yes_button")
+focus_previous = NodePath("../yes_button")
 theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
 text = "No"
 
-[node name="data_deleted_screen" type="ColorRect" parent="background"]
+[node name="data_deleted_screen" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -324,7 +329,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="data_deleted_label" type="Label" parent="background/data_deleted_screen"]
+[node name="data_deleted_label" type="Label" parent="data_deleted_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -342,7 +347,7 @@ theme_override_font_sizes/font_size = 8
 text = "All Progress deleted."
 horizontal_alignment = 1
 
-[node name="ok_button" type="Button" parent="background/data_deleted_screen"]
+[node name="ok_button" type="Button" parent="data_deleted_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -367,6 +372,6 @@ text = "Close"
 [connection signal="value_changed" from="background/music_label/music_volume_slider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="mouse_exited" from="background/sfx_label/sfx_volume_slider" to="background/sfx_label/sfx_volume_slider" method="_on_mouse_exited"]
 [connection signal="value_changed" from="background/sfx_label/sfx_volume_slider" to="." method="_on_sfx_volume_slider_value_changed"]
-[connection signal="pressed" from="background/you_sure_screen/yes_button" to="." method="_on_yes_button_pressed"]
-[connection signal="pressed" from="background/you_sure_screen/no_button" to="." method="_on_no_button_pressed"]
-[connection signal="pressed" from="background/data_deleted_screen/ok_button" to="." method="_on_ok_button_pressed"]
+[connection signal="pressed" from="you_sure_screen/yes_button" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="you_sure_screen/no_button" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="data_deleted_screen/ok_button" to="." method="_on_ok_button_pressed"]

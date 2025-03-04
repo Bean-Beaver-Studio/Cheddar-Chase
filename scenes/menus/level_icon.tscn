@@ -1,9 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://xkbgidfk0x0m"]
+[gd_scene load_steps=20 format=3 uid="uid://xkbgidfk0x0m"]
 
 [ext_resource type="Script" path="res://scripts/menus/level_icon.gd" id="1_tru2s"]
 [ext_resource type="FontFile" uid="uid://c3ofm1b4hd8f4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="2_6dorg"]
 [ext_resource type="Texture2D" uid="uid://gqivq1ryt225" path="res://assets/testlevel/level_icon.png" id="3_u7auv"]
 [ext_resource type="Texture2D" uid="uid://c2uq3hgnjs5hh" path="res://assets/testlevel/star_filled.png" id="4_4gx2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqfrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aulhd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohijm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1ves"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2xkn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_531r6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1beq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8qeb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpwqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_duj2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41oa8"]
 
 [sub_resource type="Theme" id="Theme_k8b5q"]
 
@@ -29,6 +51,17 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qqfrj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_aulhd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ohijm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_p1ves")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e2xkn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_531r6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c1beq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_t8qeb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xpwqq")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_duj2h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_41oa8")
 script = ExtResource("1_tru2s")
 
 [node name="background" type="TextureRect" parent="."]

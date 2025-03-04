@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://86tsdexohbg4"]
+[gd_scene load_steps=4 format=3 uid="uid://86tsdexohbg4"]
 
 [ext_resource type="Script" path="res://scripts/menus/death_menu.gd" id="1_qinvd"]
-[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_vrx8g"]
+[ext_resource type="FontFile" uid="uid://c3ofm1b4hd8f4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_vrx8g"]
+[ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="3_sodka"]
 
 [node name="death_menu" type="CanvasLayer"]
 script = ExtResource("1_qinvd")
@@ -69,6 +70,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_vrx8g")
 theme_override_font_sizes/font_size = 8
 text = "Restart level (R)"
+script = ExtResource("3_sodka")
 
 [node name="back_button" type="Button" parent="window"]
 layout_mode = 1

@@ -14,13 +14,12 @@ func _ready() -> void:
 			world.update_world_state()
 			world.mouse_entered.connect(set_current_world.bind(i))
 			world.pressed.connect(enter_world.bind(i))
-		
-	$player_icon.global_position = worlds[current_world].global_position
+	await get_tree().process_frame
+	set_current_world(0)
 	#animation_player.play("cloud")
 
 
 func set_current_world(id : int):
-	print(id)
 	if not worlds[id].is_locked:
 		current_world = id
 		tween_icon()
@@ -47,6 +46,7 @@ func _input(event: InputEvent) -> void:
 			print("Failed to load main menu")
 
 func enter_world(world_id : int):
+	print("Hello")
 	if worlds[world_id].level_select_packed and not worlds[world_id].is_locked:
 			game_data.set_current_world(world_id)
 			game_data.set_level_select_scene(worlds[world_id].level_select_packed)
@@ -54,4 +54,4 @@ func enter_world(world_id : int):
 
 func tween_icon():
 	move_tween = get_tree().create_tween()
-	move_tween.tween_property($player_icon, "global_position", worlds[current_world].global_position, 0.1).set_trans(Tween.TRANS_SINE)
+	move_tween.tween_property(%player_icon, "global_position", worlds[current_world].global_position + Vector2(8, 18), 0.1).set_trans(Tween.TRANS_SINE)
