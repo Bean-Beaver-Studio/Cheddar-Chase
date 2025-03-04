@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ca7scphy8lqlb"]
+[gd_scene load_steps=22 format=3 uid="uid://ca7scphy8lqlb"]
 
 [ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_3tl86"]
 [ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_52ppb"]
@@ -7,6 +7,8 @@
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="4_fk6p5"]
 [ext_resource type="Texture2D" uid="uid://cnrwsbltay4pl" path="res://assets/menus/icons/slider-grabber.png" id="6_uj7s8"]
 [ext_resource type="Script" path="res://scripts/tools/volume_slider.gd" id="7_64xbp"]
+[ext_resource type="Texture2D" uid="uid://c0hd4mamaapoa" path="res://assets/menus/icons/checkbox.png" id="8_351uf"]
+[ext_resource type="Texture2D" uid="uid://bimpdpn8tspnl" path="res://assets/menus/icons/checkbox_checked.png" id="8_yit4k"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]
 interpolation_mode = 2
@@ -47,6 +49,10 @@ thickness = 8
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_in7ql"]
 color = Color(0.909804, 0.784314, 0.184314, 1)
 thickness = 8
+
+[sub_resource type="Theme" id="Theme_cfbm5"]
+CheckBox/icons/checked = ExtResource("8_yit4k")
+CheckBox/icons/unchecked = ExtResource("8_351uf")
 
 [node name="options_menu" type="CanvasLayer"]
 script = ExtResource("1_52ppb")
@@ -249,6 +255,33 @@ step = 0.001
 value = 1.0
 script = ExtResource("7_64xbp")
 
+[node name="resolution_label" type="Label" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = 55.0
+offset_right = -28.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Full Screen"
+
+[node name="CheckBox" type="CheckBox" parent="background/resolution_label"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 193.0
+offset_top = -2.0
+offset_right = 217.0
+offset_bottom = 22.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_cfbm5")
+
 [node name="you_sure_screen" type="ColorRect" parent="background"]
 unique_name_in_owner = true
 visible = false
@@ -369,6 +402,7 @@ text = "Close"
 [connection signal="value_changed" from="background/music_label/music_volume_slider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="mouse_exited" from="background/sfx_label/sfx_volume_slider" to="background/sfx_label/sfx_volume_slider" method="_on_mouse_exited"]
 [connection signal="value_changed" from="background/sfx_label/sfx_volume_slider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="toggled" from="background/resolution_label/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="background/you_sure_screen/yes_button" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="background/you_sure_screen/no_button" to="." method="_on_no_button_pressed"]
 [connection signal="pressed" from="background/data_deleted_screen/ok_button" to="." method="_on_ok_button_pressed"]

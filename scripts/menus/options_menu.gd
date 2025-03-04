@@ -5,8 +5,18 @@ extends CanvasLayer
 @onready var master_volume_slider: HSlider = %master_volume_slider
 @onready var music_volume_slider: HSlider = %music_volume_slider
 @onready var sfx_volume_slider: HSlider = %sfx_volume_slider
+@onready var check_box: CheckBox = %CheckBox
 
 func _ready() -> void:
+	# --- sync toggle button with window mode ---
+	var current_window_mode = DisplayServer.window_get_mode()
+	var fullscreen_mode = DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
+
+	if current_window_mode == fullscreen_mode:
+		check_box.button_pressed = true
+	else:
+		check_box.button_pressed = false
+
 	you_sure_screen.visible = false
 	data_deleted_screen.visible = false
 	
@@ -33,6 +43,12 @@ func _on_no_button_pressed() -> void:
 func _on_ok_button_pressed() -> void:
 	data_deleted_screen.visible = false
 	you_sure_screen.visible = false
+
+func _on_check_box_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 # ---------- AUDIO ----------
 
