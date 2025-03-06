@@ -46,6 +46,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="pause_menu" parent="." instance=ExtResource("6_70qq0")]
+unique_name_in_owner = true
 visible = false
 
 [node name="level_layers" type="Node" parent="."]

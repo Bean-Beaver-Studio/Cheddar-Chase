@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var menu: TextureRect = %background
 @onready var you_sure_screen: ColorRect = %you_sure_screen
 @onready var data_deleted_screen: ColorRect = %data_deleted_screen
 @onready var master_volume_slider: HSlider = %master_volume_slider
@@ -15,7 +16,9 @@ func _ready() -> void:
 	sfx_volume_slider.value = get_sfx_volume()
 
 func _on_reset_progress_button_pressed() -> void:
+	menu.visible = false
 	you_sure_screen.visible = true
+	you_sure_screen.find_children("*_button")[0].grab_focus()
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
@@ -25,14 +28,21 @@ func _on_yes_button_pressed() -> void:
 	save_manager.initialize_save()
 	game_data.current_level_icon_name = "1"
 	
+	you_sure_screen.visible = false
 	data_deleted_screen.visible = true
+	data_deleted_screen.find_children("*_button")[0].grab_focus()
 
 func _on_no_button_pressed() -> void:
-	you_sure_screen.visible = false
+	back_to_menu()
 
 func _on_ok_button_pressed() -> void:
+	back_to_menu()
+
+func back_to_menu() -> void:
 	data_deleted_screen.visible = false
 	you_sure_screen.visible = false
+	menu.visible = true
+	master_volume_slider.grab_focus()
 
 # ---------- AUDIO ----------
 
