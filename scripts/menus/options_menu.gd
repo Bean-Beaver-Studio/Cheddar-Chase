@@ -33,13 +33,12 @@ func _on_yes_button_pressed() -> void:
 	data_deleted_screen.find_children("*_button")[0].grab_focus()
 
 func _on_no_button_pressed() -> void:
-	black_to_menu()
+	back_to_menu()
 
 func _on_ok_button_pressed() -> void:
-	black_to_menu()
-	
+	back_to_menu()
 
-func black_to_menu() -> void:
+func back_to_menu() -> void:
 	data_deleted_screen.visible = false
 	you_sure_screen.visible = false
 	menu.visible = true
