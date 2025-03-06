@@ -12,8 +12,11 @@ var removed_time_star: bool = false
 @onready var death_menu: CanvasLayer = %death_menu
 @onready var win_menu: CanvasLayer = %win_menu
 @onready var level_time: Node = %level_time
+@onready var pause_menu: CanvasLayer = %pause_menu
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS # Make sure we can process this scene when paused
+
 	max_score = get_tree().get_node_count_in_group("cheeses")
 	time_taken = 0.0
 	damage_taken = false
@@ -113,6 +116,13 @@ func _on_player_take_damage() -> void:
 	if not damage_taken:
 		damage_taken = true
 		calculate_stars()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):  # Escape key
+		if death_menu.visible or win_menu.visible:
+			return
+
+		pause_menu.toggle()
 
 func _on_player_trigger_death_menu() -> void:
 	death_menu.fade_in()
