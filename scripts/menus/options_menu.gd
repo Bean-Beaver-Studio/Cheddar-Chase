@@ -8,15 +8,6 @@ extends CanvasLayer
 @onready var check_box: CheckBox = %CheckBox
 
 func _ready() -> void:
-	# --- sync toggle button with window mode ---
-	var current_window_mode = DisplayServer.window_get_mode()
-	var fullscreen_mode = DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN
-
-	if current_window_mode == fullscreen_mode:
-		check_box.button_pressed = true
-	else:
-		check_box.button_pressed = false
-
 	you_sure_screen.visible = false
 	data_deleted_screen.visible = false
 	
