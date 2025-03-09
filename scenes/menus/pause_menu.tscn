@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbh0v2p385ld2"]
+[gd_scene load_steps=7 format=3 uid="uid://cbh0v2p385ld2"]
 
 [ext_resource type="Script" path="res://scripts/menus/pause_menu.gd" id="1_a0g6p"]
 [ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_hsk0x"]
 [ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="3_2clks"]
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="4_2jajv"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="5_b7xok"]
+[ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="6_apy4e"]
 
 [node name="pause_menu" type="CanvasLayer"]
 script = ExtResource("1_a0g6p")
@@ -41,9 +42,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
+offset_left = -45.0
 offset_top = -7.0
-offset_right = -6.0
+offset_right = 45.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -55,6 +56,7 @@ theme_override_styles/hover = ExtResource("3_2clks")
 theme_override_styles/pressed = ExtResource("4_2jajv")
 theme_override_styles/normal = ExtResource("5_b7xok")
 text = "Resume"
+script = ExtResource("6_apy4e")
 
 [node name="restart_button" type="Button" parent="window"]
 layout_mode = 1
@@ -63,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -7.0
-offset_right = 74.0
-offset_bottom = 7.0
+offset_left = -45.0
+offset_top = 13.0
+offset_right = 45.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -85,10 +87,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = 12.0
-offset_right = 35.0
-offset_bottom = 26.0
+offset_left = -45.0
+offset_top = 33.0
+offset_right = 45.0
+offset_bottom = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -99,6 +101,10 @@ theme_override_styles/hover = ExtResource("3_2clks")
 theme_override_styles/pressed = ExtResource("4_2jajv")
 theme_override_styles/normal = ExtResource("5_b7xok")
 text = "Main Menu"
+
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
 
 [connection signal="pressed" from="window/resume_button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="window/restart_button" to="." method="_on_restart_button_pressed"]
