@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://pckx6wtppot6"]
+[gd_scene load_steps=7 format=3 uid="uid://pckx6wtppot6"]
 
 [ext_resource type="Script" path="res://scripts/menus/level_select.gd" id="1_uc3rh"]
 [ext_resource type="PackedScene" uid="uid://xkbgidfk0x0m" path="res://scenes/menus/level_icon.tscn" id="2_m0ttj"]
 [ext_resource type="PackedScene" uid="uid://beqv3mlfudjby" path="res://scenes/menus/player_icon.tscn" id="3_n6nib"]
+[ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="4_v802m"]
 
 [sub_resource type="Gradient" id="Gradient_v8ado"]
 offsets = PackedFloat32Array(0.00675676, 1)
@@ -177,3 +178,17 @@ offset_left = 330.0
 offset_top = -103.0
 offset_right = 362.0
 offset_bottom = -71.0
+
+[node name="menu_navigation_keyboard_instruction" parent="." instance=ExtResource("4_v802m")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 0
+grow_vertical = 0

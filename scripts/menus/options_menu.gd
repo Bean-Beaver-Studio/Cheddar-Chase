@@ -7,6 +7,9 @@ extends CanvasLayer
 @onready var music_volume_slider: HSlider = %music_volume_slider
 @onready var sfx_volume_slider: HSlider = %sfx_volume_slider
 
+@onready var main_menu = load("res://scenes/menus/main_menu.tscn")
+
+
 func _ready() -> void:
 	you_sure_screen.visible = false
 	data_deleted_screen.visible = false
@@ -14,6 +17,10 @@ func _ready() -> void:
 	master_volume_slider.value = get_master_volume()
 	music_volume_slider.value = get_music_volume()
 	sfx_volume_slider.value = get_sfx_volume()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_packed(main_menu)
 
 func _on_reset_progress_button_pressed() -> void:
 	menu.visible = false

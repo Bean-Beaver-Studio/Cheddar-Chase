@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://crq73p80u74u6"]
+[gd_scene load_steps=8 format=3 uid="uid://crq73p80u74u6"]
 
 [ext_resource type="PackedScene" uid="uid://bfwnyu2q3bdeu" path="res://scenes/menus/world_icon.tscn" id="1_fa4lk"]
 [ext_resource type="Script" path="res://scripts/menus/world_select.gd" id="1_ppa2h"]
 [ext_resource type="PackedScene" uid="uid://beqv3mlfudjby" path="res://scenes/menus/player_icon.tscn" id="3_u4mso"]
 [ext_resource type="PackedScene" uid="uid://ipb3wj586xgu" path="res://scenes/menus/level_select_world_2.tscn" id="4_eg84q"]
+[ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="5_jn3bp"]
 
 [sub_resource type="Gradient" id="Gradient_3uvam"]
 offsets = PackedFloat32Array(0.00675676, 1)
@@ -80,3 +81,13 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
+
+[node name="menu_navigation_keyboard_instruction" parent="." instance=ExtResource("5_jn3bp")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
