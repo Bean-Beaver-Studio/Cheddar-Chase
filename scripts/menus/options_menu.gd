@@ -44,6 +44,19 @@ func back_to_menu() -> void:
 	menu.visible = true
 	master_volume_slider.grab_focus()
 
+func _on_check_box_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _on_check_box_integer_toggled(toggled_on: bool) -> void:
+	var win = get_window()
+	if toggled_on:
+		win.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER
+	else:
+		win.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL
+
 # ---------- AUDIO ----------
 
 const SAVE_FILE_PATH = "user://volume_data.json"
