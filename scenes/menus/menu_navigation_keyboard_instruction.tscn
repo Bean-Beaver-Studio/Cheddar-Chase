@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://rutg8iqdwpko"]
+
+[ext_resource type="FontFile" uid="uid://c0phiaalqtnkr" path="res://assets/fonts/PixelOperator8.ttf" id="1_1xbwc"]
+
+[node name="menu_navigation_keyboard_instruction" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_1xbwc")
+theme_override_font_sizes/font_size = 8
+text = "WASD / ARROW KEYS - navigation, ENTER - select, ESC - back"
