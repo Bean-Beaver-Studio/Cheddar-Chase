@@ -6,7 +6,6 @@ extends CanvasLayer
 @onready var master_volume_slider: HSlider = %master_volume_slider
 @onready var music_volume_slider: HSlider = %music_volume_slider
 @onready var sfx_volume_slider: HSlider = %sfx_volume_slider
-@onready var check_box: CheckBox = %CheckBox
 
 func _ready() -> void:
 	you_sure_screen.visible = false
