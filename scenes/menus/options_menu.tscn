@@ -7,8 +7,8 @@
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="4_fk6p5"]
 [ext_resource type="Texture2D" uid="uid://bvbohlh0rf5jl" path="res://assets/menus/icons/slider-grabber.png" id="6_uj7s8"]
 [ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="7_7nhic"]
-[ext_resource type="Texture2D" uid="uid://ctg1sy2qswejo" path="res://assets/menus/icons/checkbox.png" id="8_351uf"]
 [ext_resource type="Texture2D" uid="uid://0yap2vr06r7h" path="res://assets/menus/icons/checkbox_checked.png" id="8_yit4k"]
+[ext_resource type="Texture2D" uid="uid://bbg4f6mma64hf" path="res://assets/menus/icons/checkbox_unchecked.png" id="9_gnluf"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]
 interpolation_mode = 2
@@ -50,9 +50,9 @@ thickness = 8
 color = Color(0.909804, 0.784314, 0.184314, 1)
 thickness = 8
 
-[sub_resource type="Theme" id="Theme_cfbm5"]
+[sub_resource type="Theme" id="Theme_7yams"]
 CheckBox/icons/checked = ExtResource("8_yit4k")
-CheckBox/icons/unchecked = ExtResource("8_351uf")
+CheckBox/icons/unchecked = ExtResource("9_gnluf")
 
 [node name="options_menu" type="CanvasLayer"]
 script = ExtResource("1_52ppb")
@@ -263,23 +263,22 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -98.0
 offset_top = 55.0
-offset_right = -28.0
+offset_right = -32.0
 offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
-text = "Full Screen"
+text = "Fullscreen"
 
 [node name="check_box_fullscreen" type="CheckBox" parent="background/fullscreen_label"]
-unique_name_in_owner = true
 layout_mode = 0
 offset_left = 193.0
 offset_top = -2.0
 offset_right = 217.0
 offset_bottom = 22.0
 scale = Vector2(0.5, 0.5)
-theme = SubResource("Theme_cfbm5")
+theme = SubResource("Theme_7yams")
 button_pressed = true
 
 [node name="integer_label" type="Label" parent="background"]
@@ -306,21 +305,21 @@ offset_top = -2.0
 offset_right = 218.0
 offset_bottom = 22.0
 scale = Vector2(0.5, 0.5)
-theme = SubResource("Theme_cfbm5")
+theme = SubResource("Theme_7yams")
 button_pressed = true
 
-[node name="you_sure_screen" type="ColorRect" parent="background"]
+[node name="you_sure_screen" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="you_sure_screen#you_sure_label" type="Label" parent="."]
-visible = false
+[node name="you_sure_label" type="Label" parent="you_sure_screen"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -340,8 +339,8 @@ All progress will be deleted permanently."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="you_sure_screen#yes_button" type="Button" parent="."]
-visible = false
+[node name="yes_button" type="Button" parent="you_sure_screen"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -360,8 +359,8 @@ theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
 text = "Yes"
 
-[node name="you_sure_screen#no_button" type="Button" parent="."]
-visible = false
+[node name="no_button" type="Button" parent="you_sure_screen"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -435,3 +434,6 @@ text = "Close"
 [connection signal="value_changed" from="background/sfx_label/sfx_volume_slider" to="." method="_on_sfx_volume_slider_value_changed"]
 [connection signal="toggled" from="background/fullscreen_label/check_box_fullscreen" to="." method="_on_check_box_fullscreen_toggled"]
 [connection signal="toggled" from="background/integer_label/check_box_integer" to="." method="_on_check_box_integer_toggled"]
+[connection signal="pressed" from="you_sure_screen/yes_button" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="you_sure_screen/no_button" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="data_deleted_screen/ok_button" to="." method="_on_ok_button_pressed"]
