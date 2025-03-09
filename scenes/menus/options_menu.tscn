@@ -254,7 +254,7 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="resolution_label" type="Label" parent="background"]
+[node name="fullscreen_label" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -271,12 +271,39 @@ theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
 text = "Full Screen"
 
-[node name="CheckBox" type="CheckBox" parent="background/resolution_label"]
+[node name="check_box_fullscreen" type="CheckBox" parent="background/fullscreen_label"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 193.0
 offset_top = -2.0
 offset_right = 217.0
+offset_bottom = 22.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_cfbm5")
+button_pressed = true
+
+[node name="integer_label" type="Label" parent="background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = 75.0
+offset_right = -4.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Integer Scaling"
+
+[node name="check_box_integer" type="CheckBox" parent="background/integer_label"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = -2.0
+offset_right = 218.0
 offset_bottom = 22.0
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_cfbm5")
@@ -406,4 +433,5 @@ text = "Close"
 [connection signal="value_changed" from="background/music_label/music_volume_slider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="mouse_exited" from="background/sfx_label/sfx_volume_slider" to="background/sfx_label/sfx_volume_slider" method="_on_mouse_exited"]
 [connection signal="value_changed" from="background/sfx_label/sfx_volume_slider" to="." method="_on_sfx_volume_slider_value_changed"]
-[connection signal="toggled" from="background/resolution_label/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="background/fullscreen_label/check_box_fullscreen" to="." method="_on_check_box_fullscreen_toggled"]
+[connection signal="toggled" from="background/integer_label/check_box_integer" to="." method="_on_check_box_integer_toggled"]
