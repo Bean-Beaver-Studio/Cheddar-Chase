@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://crq73p80u74u6"]
+[gd_scene load_steps=12 format=3 uid="uid://crq73p80u74u6"]
 
 [ext_resource type="PackedScene" uid="uid://bfwnyu2q3bdeu" path="res://scenes/menus/world_icon.tscn" id="1_fa4lk"]
 [ext_resource type="Script" path="res://scripts/menus/world_select.gd" id="1_ppa2h"]
 [ext_resource type="PackedScene" uid="uid://beqv3mlfudjby" path="res://scenes/menus/player_icon.tscn" id="3_u4mso"]
 [ext_resource type="PackedScene" uid="uid://ipb3wj586xgu" path="res://scenes/menus/level_select_world_2.tscn" id="4_eg84q"]
 [ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="5_jn3bp"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="6_trlcv"]
+[ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="7_ufmtn"]
+[ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="8_0nni8"]
+[ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="9_xuf3u"]
 
 [sub_resource type="Gradient" id="Gradient_3uvam"]
 offsets = PackedFloat32Array(0.00675676, 1)
@@ -91,3 +95,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="back_button" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 27.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_trlcv")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("7_ufmtn")
+theme_override_styles/pressed = ExtResource("8_0nni8")
+theme_override_styles/normal = ExtResource("9_xuf3u")
+text = "Back
+"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

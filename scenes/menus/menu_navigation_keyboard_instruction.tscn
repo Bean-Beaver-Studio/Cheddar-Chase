@@ -11,18 +11,18 @@ anchors_preset = 0
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = -251.0
-offset_top = -25.0
-offset_right = -5.0
-offset_bottom = -5.0
+offset_left = -256.0
+offset_top = -30.0
+offset_right = -10.0
+offset_bottom = -10.0
 color = Color(0, 0, 0, 0.592157)
 
 [node name="text" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -7.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = -4.0
+offset_left = -12.0
+offset_top = -9.0
+offset_right = -12.0
+offset_bottom = -9.0
 
 [node name="arraw_keys_texture" type="TextureRect" parent="text"]
 offset_left = -236.0

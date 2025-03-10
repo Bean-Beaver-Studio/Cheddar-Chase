@@ -55,3 +55,7 @@ func enter_world(world_id : int):
 func tween_icon():
 	move_tween = get_tree().create_tween()
 	move_tween.tween_property(%player_icon, "global_position", worlds[current_world].global_position + Vector2(8, 18), 0.1).set_trans(Tween.TRANS_SINE)
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
