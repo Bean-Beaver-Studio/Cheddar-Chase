@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="3_bpcmx"]
 [ext_resource type="PackedScene" uid="uid://beqv3mlfudjby" path="res://scenes/menus/player_icon.tscn" id="3_n6nib"]
 [ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="4_3ua3h"]
-[ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="4_v802m"]
+[ext_resource type="PackedScene" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="4_v802m"]
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="5_ee4gy"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="6_rr1mx"]
 
@@ -62,8 +62,13 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 65.0
 offset_bottom = 27.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_bpcmx")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("4_3ua3h")
