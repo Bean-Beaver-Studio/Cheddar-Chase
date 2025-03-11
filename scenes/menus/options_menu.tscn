@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="7_7nhic"]
 [ext_resource type="Texture2D" uid="uid://bimpdpn8tspnl" path="res://assets/menus/icons/checkbox_checked.png" id="8_yit4k"]
 [ext_resource type="Texture2D" uid="uid://pwedn34ohgda" path="res://assets/menus/icons/checkbox_unchecked.png" id="9_gnluf"]
-[ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="10_g3xre"]
+[ext_resource type="PackedScene" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="10_g3xre"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]
 interpolation_mode = 2
@@ -73,8 +73,13 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 65.0
 offset_bottom = 27.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("2_r63em")
@@ -115,8 +120,13 @@ offset_right = 65.0
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3tl86")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("2_r63em")
