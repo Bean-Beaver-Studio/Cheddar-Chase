@@ -12,7 +12,7 @@ var is_falling = false
 var is_flying = false
 var attack_switch = false
 var is_invincible = false
-
+var player_direction = Vector2.RIGHT
 
 # Cooldown variables
 var attack_cooldown = 0.7 
@@ -114,7 +114,8 @@ func handle_movement_and_actions(delta):
 				input_vector.y -= 1
 	
 			if input_vector.length() > 0:
-				velocity = input_vector.normalized() * speed
+				player_direction = input_vector.normalized()
+				velocity = player_direction * speed
 				animated_sprite_2d.rotation = velocity.angle()
 			else:
 				velocity = Vector2.ZERO
@@ -136,7 +137,8 @@ func handle_movement_and_actions(delta):
 			input_vector.y -= 1
 
 		if input_vector.length() > 0:
-			velocity = input_vector.normalized() * speed
+			player_direction = input_vector.normalized()
+			velocity = player_direction * speed
 			
 			if !is_colliding():
 				animated_sprite_2d.play("walk")
@@ -183,9 +185,14 @@ func handle_movement_and_actions(delta):
 # Function to check for collision
 func is_colliding() -> bool:
 	for i in range(get_slide_collision_count()):
-		if get_slide_collision(i):
-			return true
+		var collision = get_slide_collision(i)
+		if collision:
+			var collision_normal = collision.get_normal()
+			if collision_normal.dot(player_direction) < -0.9:
+				# only play collision animation if player is walking directly towards a wall
+				return true
 	return false
+
 
 # Function to handle taking damage
 func take_damage(amount: int, attacker_position: Vector2):

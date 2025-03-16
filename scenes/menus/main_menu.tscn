@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnvkpndk0p0c3"]
+[gd_scene load_steps=11 format=3 uid="uid://bnvkpndk0p0c3"]
 
 [ext_resource type="Script" path="res://scripts/menus/main_menu.gd" id="1_q11qb"]
-[ext_resource type="FontFile" uid="uid://dm5jx6jx81a8k" path="res://assets/fonts/PixelOperator8.ttf" id="3_idsb0"]
-[ext_resource type="Texture2D" uid="uid://dbehkumyqywdu" path="res://assets/menus/Cheddar chase.png" id="4_igaen"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="3_idsb0"]
+[ext_resource type="Texture2D" uid="uid://bbk6ary1es07t" path="res://assets/menus/Cheddar chase.png" id="4_igaen"]
 [ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="4_w5o2c"]
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="5_2s3lw"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="6_2gbhv"]
 [ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="6_a0se2"]
+[ext_resource type="PackedScene" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="8_5fa0q"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]
 interpolation_mode = 2
@@ -38,8 +39,13 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_bottom = NodePath("../options_button")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_idsb0")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("4_w5o2c")
@@ -64,7 +70,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_top = NodePath("../start_button")
 focus_neighbor_bottom = NodePath("../exit_button")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_idsb0")
 theme_override_font_sizes/font_size = 8
@@ -86,8 +96,13 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_neighbor_top = NodePath("../options_button")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_idsb0")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("4_w5o2c")
@@ -115,6 +130,15 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="menu_navigation_keyboard_instruction" parent="." instance=ExtResource("8_5fa0q")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]
