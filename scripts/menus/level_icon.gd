@@ -1,12 +1,13 @@
-extends Control
+extends Button
 class_name LevelIcon
 
 @export var level_name: String = "1"
-@onready var star_empty = load("res://assets/testlevel/star_empty.png")
-@onready var star_filled = load("res://assets/testlevel/star_filled.png")
-@onready var level_icon_completed = load("res://assets/testlevel/level_icon_completed.png")
-@onready var level_icon_allstar = load("res://assets/testlevel/level_icon_allstar.png")
-@onready var level_icon = load("res://assets/testlevel/level_icon.png")
+@onready var star_empty = load("res://assets/menus/icons/star_empty.png")
+@onready var star_filled = load("res://assets/menus/icons/star_filled.png")
+@onready var level_icon_completed = load("res://assets/menus/icons/level_icon_completed.png")
+@onready var level_icon_allstar = load("res://assets/menus/icons/level_icon_allstar.png")
+@onready var level_icon = load("res://assets/menus/icons/level_icon.png")
+@onready var label: Label = $background/label
 @export_file("*.tscn") var next_scene_path: String
 @export var next_level_up: LevelIcon
 @export var next_level_down: LevelIcon
@@ -18,7 +19,7 @@ func _ready() -> void:
 	add_to_group("level_icons")
 	if not Engine.is_editor_hint():
 		update_level_state()
-	$label.text = "Level " + str(level_name)
+	label.text = "Level " + str(level_name)
 
 func update_level_state() -> void:
 	var save_data = save_manager.load_progress()
@@ -51,7 +52,7 @@ func update_level_state() -> void:
 
 func modulate_level(color: Color) -> void:
 	$level_icon.modulate = color
-	$label.modulate = color
+	#$label.modulate = color
 
 func display_stars(star_count: int) -> void:
 	var star_nodes = [$star_1, $star_2, $star_3]

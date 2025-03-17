@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://pqypm64qubrr"]
+
+[ext_resource type="Texture2D" uid="uid://cxrj864cqd2f0" path="res://assets/characters/enemies/bug_red/diffuse/death.png" id="1_sk4mq"]
+[ext_resource type="Texture2D" uid="uid://d1bgg32kj3wfx" path="res://assets/characters/enemies/bug_red/normal/death_normal.png" id="2_o7ggv"]
+
+[resource]
+diffuse_texture = ExtResource("1_sk4mq")
+normal_texture = ExtResource("2_o7ggv")

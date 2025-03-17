@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="8_drw84"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="8_wfgol"]
 [ext_resource type="PackedScene" uid="uid://cs03yq5n5ibww" path="res://scenes/characters/enemies/pit.tscn" id="9_6ymtd"]
-[ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/heart.tscn" id="9_751qf"]
+[ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/health.tscn" id="9_751qf"]
 [ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="9_gnaqh"]
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="10_js6c0"]
 [ext_resource type="PackedScene" uid="uid://bw5xityvbf8d2" path="res://scenes/characters/enemies/bug_flying.tscn" id="13_q2t4e"]
@@ -36,6 +36,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="pause_menu" parent="." instance=ExtResource("6_762tr")]
+unique_name_in_owner = true
 visible = false
 
 [node name="level_layers" type="Node" parent="."]

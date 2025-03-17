@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://ccy0twsrgy7v1"]
+
+[ext_resource type="Texture2D" uid="uid://dfy86ke67cjnu" path="res://assets/characters/enemies/mouse_trap/diffuse/trapped_bug.png" id="1_dgpqf"]
+[ext_resource type="Texture2D" uid="uid://br04pvhfqn5wb" path="res://assets/characters/enemies/mouse_trap/normal/trapped_bug_normal.png" id="2_r3jva"]
+
+[resource]
+diffuse_texture = ExtResource("1_dgpqf")
+normal_texture = ExtResource("2_r3jva")

@@ -2,301 +2,119 @@
 
 [ext_resource type="PackedScene" uid="uid://bfwnyu2q3bdeu" path="res://scenes/menus/world_icon.tscn" id="1_fa4lk"]
 [ext_resource type="Script" path="res://scripts/menus/world_select.gd" id="1_ppa2h"]
-[ext_resource type="Texture2D" uid="uid://waqpmiqfn6gm" path="res://assets/testlevel/world_background.png" id="2_f77n3"]
-[ext_resource type="Texture2D" uid="uid://bpcsg5w6du4rl" path="res://assets/testlevel/world_background_house_1.png" id="3_sb5bs"]
 [ext_resource type="PackedScene" uid="uid://beqv3mlfudjby" path="res://scenes/menus/player_icon.tscn" id="3_u4mso"]
-[ext_resource type="PackedScene" path="res://scenes/menus/level_select_world_2.tscn" id="4_eg84q"]
-[ext_resource type="Texture2D" uid="uid://co52trasfnvea" path="res://assets/testlevel/world_background_house_1_loop.png" id="5_p151k"]
-[ext_resource type="PackedScene" uid="uid://btlxp5p38vcpo" path="res://scenes/menus/clouds.tscn" id="8_ihhey"]
+[ext_resource type="PackedScene" uid="uid://ipb3wj586xgu" path="res://scenes/menus/level_select_world_2.tscn" id="4_eg84q"]
+[ext_resource type="PackedScene" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="5_jn3bp"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="6_trlcv"]
+[ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="7_ufmtn"]
+[ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="8_0nni8"]
+[ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="9_xuf3u"]
 
-[sub_resource type="Gradient" id="Gradient_ssufh"]
-offsets = PackedFloat32Array(0.461039, 0.642857)
-colors = PackedColorArray(0, 0.48823, 0.917034, 1, 0.753727, 0.863497, 1, 1)
+[sub_resource type="Gradient" id="Gradient_3uvam"]
+offsets = PackedFloat32Array(0.00675676, 1)
+colors = PackedColorArray(0.311012, 0.636814, 1, 1, 1, 0.735299, 0.653655, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_t1e33"]
-gradient = SubResource("Gradient_ssufh")
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_kd4xh"]
-frames = 2
-frame_0/texture = ExtResource("3_sb5bs")
-frame_0/duration = 0.4
-frame_1/texture = ExtResource("5_p151k")
-frame_1/duration = 0.4
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_stskm"]
+gradient = SubResource("Gradient_3uvam")
+width = 640
+height = 360
+fill_from = Vector2(0.328671, 0)
+fill_to = Vector2(0.835664, 1)
 
 [node name="world_select" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -632.0
-offset_top = -412.0
-offset_right = -632.0
-offset_bottom = -412.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_ppa2h")
 
 [node name="sky" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 3616.0
-offset_top = -1384.0
-offset_right = 4256.0
-offset_bottom = -217.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 1.5708
-scale = Vector2(5, 5)
-texture = SubResource("GradientTexture1D_t1e33")
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_stskm")
 
-[node name="ground" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="background_11" type="TextureRect" parent="ground"]
+[node name="HFlowContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1274.0
-offset_top = 909.0
-offset_right = -1018.0
-offset_bottom = 1037.0
+offset_left = -179.0
+offset_top = -28.0
+offset_right = 180.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
+mouse_filter = 2
+theme_override_constants/separation = 50
+alignment = 1
 
-[node name="background_10" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1029.0
-offset_top = 911.0
-offset_right = 1285.0
-offset_bottom = 1039.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
+[node name="world_icon1" parent="HFlowContainer" instance=ExtResource("1_fa4lk")]
+layout_mode = 2
 
-[node name="background_9" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1029.0
-offset_top = 911.0
-offset_right = 1285.0
-offset_bottom = 1039.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_8" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1797.0
-offset_top = 911.0
-offset_right = 2053.0
-offset_bottom = 1039.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_7" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 261.0
-offset_top = 910.0
-offset_right = 517.0
-offset_bottom = 1038.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_6" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -506.0
-offset_top = 910.0
-offset_right = -250.0
-offset_bottom = 1038.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_5" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1276.0
-offset_top = 556.0
-offset_right = -1020.0
-offset_bottom = 684.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_4" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1028.0
-offset_top = 556.0
-offset_right = 1284.0
-offset_bottom = 684.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_3" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1796.0
-offset_top = 556.0
-offset_right = 2052.0
-offset_bottom = 684.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_2" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 260.0
-offset_top = 556.0
-offset_right = 516.0
-offset_bottom = 684.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="background_1" type="TextureRect" parent="ground"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -508.0
-offset_top = 556.0
-offset_right = -252.0
-offset_bottom = 684.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = ExtResource("2_f77n3")
-
-[node name="world_1" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -17.0
-offset_top = 447.0
-offset_right = 111.0
-offset_bottom = 511.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture = SubResource("AnimatedTexture_kd4xh")
-
-[node name="world_icon1" parent="." instance=ExtResource("1_fa4lk")]
-layout_mode = 1
-offset_left = 128.0
-offset_top = 384.0
-offset_right = 192.0
-offset_bottom = 448.0
-
-[node name="world_icon2" parent="." instance=ExtResource("1_fa4lk")]
-layout_mode = 1
-offset_left = 352.0
-offset_top = 384.0
-offset_right = 416.0
-offset_bottom = 448.0
+[node name="world_icon2" parent="HFlowContainer" instance=ExtResource("1_fa4lk")]
+layout_mode = 2
 world_index = 2
 level_select_packed = ExtResource("4_eg84q")
 
-[node name="world_icon3" parent="." instance=ExtResource("1_fa4lk")]
-layout_mode = 1
-offset_left = 576.0
-offset_top = 384.0
-offset_right = 640.0
-offset_bottom = 448.0
+[node name="world_icon3" parent="HFlowContainer" instance=ExtResource("1_fa4lk")]
+layout_mode = 2
 world_index = 3
 
-[node name="world_icon4" parent="." instance=ExtResource("1_fa4lk")]
-layout_mode = 1
-offset_left = 800.0
-offset_top = 384.0
-offset_right = 864.0
-offset_bottom = 448.0
+[node name="world_icon4" parent="HFlowContainer" instance=ExtResource("1_fa4lk")]
+layout_mode = 2
 world_index = 4
 
-[node name="world_icon5" parent="." instance=ExtResource("1_fa4lk")]
-layout_mode = 1
-offset_left = 1016.0
-offset_top = 384.0
-offset_right = 1080.0
-offset_bottom = 448.0
+[node name="world_icon5" parent="HFlowContainer" instance=ExtResource("1_fa4lk")]
+layout_mode = 2
 world_index = 5
 
 [node name="player_icon" parent="." instance=ExtResource("3_u4mso")]
+unique_name_in_owner = true
 layout_mode = 1
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 
-[node name="clouds" parent="." instance=ExtResource("8_ihhey")]
+[node name="menu_navigation_keyboard_instruction" parent="." instance=ExtResource("5_jn3bp")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 27.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_trlcv")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("7_ufmtn")
+theme_override_styles/pressed = ExtResource("8_0nni8")
+theme_override_styles/normal = ExtResource("9_xuf3u")
+text = "Back
+"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

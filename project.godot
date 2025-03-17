@@ -14,7 +14,6 @@ config/name="TDDD23-Game-Project"
 run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
-boot_splash/image="res://assets/testlevel/BEANBEAVERSTUDIOS.png"
 boot_splash/use_filter=false
 
 [autoload]
@@ -23,6 +22,14 @@ game_data="*res://scripts/game_data.gd"
 functions="*res://scripts/functions.gd"
 music_manager="*res://scenes/tools/music_manager/music_manager.tscn"
 save_manager="*res://scripts/tools/save_manager.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=4
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [file_customization]
 

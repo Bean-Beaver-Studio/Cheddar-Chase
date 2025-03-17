@@ -1,10 +1,14 @@
 extends CanvasLayer
 
+@onready var menu: TextureRect = %background
 @onready var you_sure_screen: ColorRect = %you_sure_screen
 @onready var data_deleted_screen: ColorRect = %data_deleted_screen
 @onready var master_volume_slider: HSlider = %master_volume_slider
 @onready var music_volume_slider: HSlider = %music_volume_slider
 @onready var sfx_volume_slider: HSlider = %sfx_volume_slider
+
+@onready var main_menu = load("res://scenes/menus/main_menu.tscn")
+
 
 func _ready() -> void:
 	you_sure_screen.visible = false
@@ -14,8 +18,14 @@ func _ready() -> void:
 	music_volume_slider.value = get_music_volume()
 	sfx_volume_slider.value = get_sfx_volume()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_packed(main_menu)
+
 func _on_reset_progress_button_pressed() -> void:
+	menu.visible = false
 	you_sure_screen.visible = true
+	you_sure_screen.find_children("*_button")[0].grab_focus()
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn")
@@ -25,14 +35,34 @@ func _on_yes_button_pressed() -> void:
 	save_manager.initialize_save()
 	game_data.current_level_icon_name = "1"
 	
+	you_sure_screen.visible = false
 	data_deleted_screen.visible = true
+	data_deleted_screen.find_children("*_button")[0].grab_focus()
 
 func _on_no_button_pressed() -> void:
-	you_sure_screen.visible = false
+	back_to_menu()
 
 func _on_ok_button_pressed() -> void:
+	back_to_menu()
+
+func back_to_menu() -> void:
 	data_deleted_screen.visible = false
 	you_sure_screen.visible = false
+	menu.visible = true
+	master_volume_slider.grab_focus()
+
+func _on_check_box_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _on_check_box_integer_toggled(toggled_on: bool) -> void:
+	var win = get_window()
+	if toggled_on:
+		win.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER
+	else:
+		win.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL
 
 # ---------- AUDIO ----------
 

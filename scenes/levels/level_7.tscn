@@ -12,10 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="9_0vpxx"]
 [ext_resource type="PackedScene" uid="uid://dcfj1ji8t2a6c" path="res://scenes/characters/enemies/mouse_trap.tscn" id="9_3n45c"]
 [ext_resource type="PackedScene" uid="uid://bwbbcnol0agg8" path="res://scenes/characters/enemies/cat/plate.tscn" id="9_kepna"]
-[ext_resource type="PackedScene" path="res://scenes/collectibles/fish.tscn" id="10_b6qxq"]
+[ext_resource type="PackedScene" uid="uid://dtomxmva8ax4d" path="res://scenes/collectibles/fish.tscn" id="10_b6qxq"]
 [ext_resource type="PackedScene" uid="uid://tspy04gfoqh8" path="res://scenes/characters/enemies/cat/cat.tscn" id="10_vnxaj"]
 [ext_resource type="PackedScene" uid="uid://bektskn8dihsw" path="res://scenes/characters/enemies/cat/bed.tscn" id="12_bs5n8"]
-[ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/heart.tscn" id="14_uc6h4"]
+[ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/health.tscn" id="14_uc6h4"]
 [ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="15_mbojn"]
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="16_ica1i"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="17_jsvtl"]
@@ -46,6 +46,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="pause_menu" parent="." instance=ExtResource("6_70qq0")]
+unique_name_in_owner = true
 visible = false
 
 [node name="level_layers" type="Node" parent="."]

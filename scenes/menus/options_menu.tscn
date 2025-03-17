@@ -1,12 +1,20 @@
-[gd_scene load_steps=19 format=3 uid="uid://ca7scphy8lqlb"]
+[gd_scene load_steps=28 format=3 uid="uid://ca7scphy8lqlb"]
 
-[ext_resource type="FontFile" uid="uid://bos2geotawcoj" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_3tl86"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_3tl86"]
 [ext_resource type="Script" path="res://scripts/menus/options_menu.gd" id="1_52ppb"]
-[ext_resource type="StyleBox" path="res://scenes/tools/button_style_hover.tres" id="2_r63em"]
-[ext_resource type="StyleBox" path="res://scenes/tools/button_stye_pressed.tres" id="3_5uf0h"]
-[ext_resource type="StyleBox" path="res://scenes/tools/button_style_normal.tres" id="4_fk6p5"]
-[ext_resource type="Texture2D" uid="uid://cbiablq6ous60" path="res://assets/tools/slider-grabber.png" id="6_uj7s8"]
-[ext_resource type="Script" path="res://scripts/tools/volume_slider.gd" id="7_64xbp"]
+[ext_resource type="StyleBox" uid="uid://0nld3ov2auk4" path="res://scenes/tools/button_style_hover.tres" id="2_r63em"]
+[ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="3_5uf0h"]
+[ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="4_fk6p5"]
+[ext_resource type="Texture2D" uid="uid://cnrwsbltay4pl" path="res://assets/menus/icons/slider-grabber.png" id="6_uj7s8"]
+[ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="7_7nhic"]
+[ext_resource type="FontFile" uid="uid://2byqgp7tomj2" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="7_iocff"]
+[ext_resource type="Texture2D" uid="uid://bimpdpn8tspnl" path="res://assets/menus/icons/checkbox_checked.png" id="8_yit4k"]
+[ext_resource type="Texture2D" uid="uid://pwedn34ohgda" path="res://assets/menus/icons/checkbox_unchecked.png" id="9_gnluf"]
+[ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="10_g3xre"]
+[ext_resource type="Texture2D" uid="uid://4seipskwfr1n" path="res://assets/menus/controls/keys-control.png" id="12_b5tu2"]
+[ext_resource type="Texture2D" uid="uid://b0uj8r4okmu2h" path="res://assets/menus/controls/wasd-control.png" id="13_dct5v"]
+[ext_resource type="Texture2D" uid="uid://d0l2x3t2nyl26" path="res://assets/menus/controls/k-control.png" id="14_gjy4l"]
+[ext_resource type="Texture2D" uid="uid://lx7eopnujwhe" path="res://assets/menus/controls/space-control.png" id="15_jgg1p"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]
 interpolation_mode = 2
@@ -48,10 +56,15 @@ thickness = 8
 color = Color(0.909804, 0.784314, 0.184314, 1)
 thickness = 8
 
+[sub_resource type="Theme" id="Theme_7yams"]
+CheckBox/icons/checked = ExtResource("8_yit4k")
+CheckBox/icons/unchecked = ExtResource("9_gnluf")
+
 [node name="options_menu" type="CanvasLayer"]
 script = ExtResource("1_52ppb")
 
 [node name="background" type="TextureRect" parent="."]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -61,14 +74,19 @@ texture = SubResource("GradientTexture1D_151n7")
 
 [node name="back_button" type="Button" parent="background"]
 layout_mode = 1
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 296.0
-offset_bottom = 136.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 65.0
+offset_bottom = 27.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("2_r63em")
 theme_override_styles/pressed = ExtResource("3_5uf0h")
 theme_override_styles/normal = ExtResource("4_fk6p5")
@@ -82,15 +100,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = -128.0
-offset_right = 204.0
-offset_bottom = -64.0
+offset_left = -50.0
+offset_top = -180.0
+offset_right = 50.0
+offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 16
 text = "OPTIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="reset_progress_button" type="Button" parent="background"]
 layout_mode = 1
@@ -99,39 +119,70 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -287.0
-offset_top = -36.0
-offset_right = 287.0
-offset_bottom = 36.0
+offset_left = -66.0
+offset_top = -126.0
+offset_right = 65.0
+offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 8
 theme_override_styles/hover = ExtResource("2_r63em")
 theme_override_styles/pressed = ExtResource("3_5uf0h")
 theme_override_styles/normal = ExtResource("4_fk6p5")
 text = " Reset Progress "
 
-[node name="master_label" type="Label" parent="background"]
+[node name="menu_navigation_keyboard_instruction" parent="background" instance=ExtResource("10_g3xre")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="settings" type="Control" parent="background"]
+anchors_preset = 0
+offset_top = -58.0
+offset_right = 40.0
+offset_bottom = -18.0
+
+[node name="settings_label" type="Label" parent="background/settings"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 155.0
+offset_right = 282.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("7_iocff")
+theme_override_font_sizes/font_size = 8
+text = "Settings"
+
+[node name="master_label" type="Label" parent="background/settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -308.0
-offset_top = 76.0
-offset_right = -136.0
-offset_bottom = 108.0
+offset_left = 202.0
+offset_top = 155.0
+offset_right = 262.0
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Master"
 
-[node name="master_volume_slider" type="HSlider" parent="background/master_label"]
+[node name="master_volume_slider" type="HSlider" parent="background/settings/master_label"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -139,12 +190,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 120.0
+offset_left = 70.0
 offset_top = -5.0
-offset_right = 529.0
+offset_right = 479.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.25, 0.25)
 theme_override_icons/grabber = ExtResource("6_uj7s8")
 theme_override_icons/grabber_highlight = ExtResource("6_uj7s8")
 theme_override_icons/grabber_disabled = ExtResource("6_uj7s8")
@@ -153,29 +205,29 @@ theme_override_styles/slider = SubResource("StyleBoxLine_psj77")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_ff3t8")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_aveqo")
 max_value = 1.0
-step = 0.001
+step = 0.05
 value = 1.0
-script = ExtResource("7_64xbp")
+script = ExtResource("7_7nhic")
 
-[node name="music_label" type="Label" parent="background"]
+[node name="music_label" type="Label" parent="background/settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -308.0
-offset_top = 126.0
-offset_right = -136.0
-offset_bottom = 158.0
+offset_left = 202.0
+offset_top = 175.0
+offset_right = 262.0
+offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Music
 "
 
-[node name="music_volume_slider" type="HSlider" parent="background/music_label"]
+[node name="music_volume_slider" type="HSlider" parent="background/settings/music_label"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -183,12 +235,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 120.0
+offset_left = 70.0
 offset_top = -5.0
-offset_right = 529.0
+offset_right = 479.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.25, 0.25)
 theme_override_icons/grabber = ExtResource("6_uj7s8")
 theme_override_icons/grabber_highlight = ExtResource("6_uj7s8")
 theme_override_icons/grabber_disabled = ExtResource("6_uj7s8")
@@ -197,28 +250,27 @@ theme_override_styles/slider = SubResource("StyleBoxLine_uwshx")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_573gr")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_v5hc4")
 max_value = 1.0
-step = 0.001
+step = 0.05
 value = 1.0
-script = ExtResource("7_64xbp")
 
-[node name="sfx_label" type="Label" parent="background"]
+[node name="sfx_label" type="Label" parent="background/settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -308.0
-offset_top = 176.0
-offset_right = -136.0
-offset_bottom = 208.0
+offset_left = 202.0
+offset_top = 195.0
+offset_right = 262.0
+offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "SFX"
 
-[node name="sfx_volume_slider" type="HSlider" parent="background/sfx_label"]
+[node name="sfx_volume_slider" type="HSlider" parent="background/settings/sfx_label"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -226,12 +278,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 120.0
+offset_left = 70.0
 offset_top = -5.0
-offset_right = 529.0
+offset_right = 479.0
 offset_bottom = 11.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.25, 0.25)
 theme_override_icons/grabber = ExtResource("6_uj7s8")
 theme_override_icons/grabber_highlight = ExtResource("6_uj7s8")
 theme_override_icons/grabber_disabled = ExtResource("6_uj7s8")
@@ -240,141 +293,282 @@ theme_override_styles/slider = SubResource("StyleBoxLine_hhgwl")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_4vmjh")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_in7ql")
 max_value = 1.0
-step = 0.001
+step = 0.05
 value = 1.0
-script = ExtResource("7_64xbp")
 
-[node name="you_sure_screen" type="ColorRect" parent="background"]
-unique_name_in_owner = true
-visible = false
+[node name="fullscreen_label" type="Label" parent="background/settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -357.0
-offset_top = -138.0
-offset_right = 357.0
-offset_bottom = 138.0
+offset_left = 202.0
+offset_top = 215.0
+offset_right = 268.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Fullscreen"
+
+[node name="check_box_fullscreen" type="CheckBox" parent="background/settings/fullscreen_label"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = -2.0
+offset_right = 217.0
+offset_bottom = 22.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_7yams")
+button_pressed = true
+
+[node name="integer_label" type="Label" parent="background/settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = 235.0
+offset_right = 296.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Integer Scaling"
+
+[node name="check_box_integer" type="CheckBox" parent="background/settings/integer_label"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = -2.0
+offset_right = 218.0
+offset_bottom = 22.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_7yams")
+button_pressed = true
+
+[node name="controls" type="Control" parent="background"]
+anchors_preset = 0
+offset_top = 15.0
+offset_right = 40.0
+offset_bottom = 55.0
+
+[node name="controls_label" type="Label" parent="background/controls"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 214.0
+offset_right = 283.0
+offset_bottom = 222.0
+theme_override_fonts/font = ExtResource("7_iocff")
+theme_override_font_sizes/font_size = 8
+text = "Controls"
+
+[node name="move_label" type="Label" parent="background/controls"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 234.0
+offset_right = 252.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Move"
+
+[node name="move_texture_1" type="TextureRect" parent="background/controls/move_label"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = -11.0
+offset_right = 153.0
+offset_bottom = 10.0
+texture = ExtResource("12_b5tu2")
+stretch_mode = 4
+
+[node name="or_label" type="Label" parent="background/controls/move_label"]
+layout_mode = 0
+offset_left = 156.0
+offset_right = 170.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "or"
+
+[node name="move_texture_2" type="TextureRect" parent="background/controls/move_label"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = -11.0
+offset_right = 203.0
+offset_bottom = 10.0
+texture = ExtResource("13_dct5v")
+stretch_mode = 4
+
+[node name="attack_label" type="Label" parent="background/controls"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 254.0
+offset_right = 252.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Attack
+"
+
+[node name="attack_texture" type="TextureRect" parent="background/controls/attack_label"]
+layout_mode = 0
+offset_left = 193.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 10.0
+texture = ExtResource("14_gjy4l")
+stretch_mode = 4
+
+[node name="jump_and_dodge_label" type="Label" parent="background/controls"]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 274.0
+offset_right = 262.0
+offset_bottom = 282.0
+theme_override_fonts/font = ExtResource("1_3tl86")
+theme_override_font_sizes/font_size = 8
+text = "Jump/Dodge
+"
+
+[node name="jump_and_dodge_texture" type="TextureRect" parent="background/controls/jump_and_dodge_label"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = -1.0
+offset_right = 203.0
+offset_bottom = 10.0
+texture = ExtResource("15_jgg1p")
+stretch_mode = 4
+
+[node name="you_sure_screen" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="you_sure_label" type="Label" parent="background/you_sure_screen"]
+[node name="you_sure_label" type="Label" parent="you_sure_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -315.0
-offset_top = -105.5
-offset_right = 315.0
-offset_bottom = 31.5
+offset_left = -131.5
+offset_top = -32.5
+offset_right = 131.5
+offset_bottom = 32.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Are you sure? 
 
 All progress will be deleted permanently."
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="yes_button" type="Button" parent="background/you_sure_screen"]
+[node name="yes_button" type="Button" parent="you_sure_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = 71.0
-offset_right = -47.0
-offset_bottom = 111.0
+offset_left = -73.0
+offset_top = 20.0
+offset_right = -27.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_right = NodePath("../no_button")
+focus_next = NodePath("../no_button")
+focus_previous = NodePath("../no_button")
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Yes"
 
-[node name="no_button" type="Button" parent="background/you_sure_screen"]
+[node name="no_button" type="Button" parent="you_sure_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 48.0
-offset_top = 71.0
-offset_right = 112.0
-offset_bottom = 111.0
+offset_left = 27.0
+offset_top = 20.0
+offset_right = 73.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../yes_button")
+focus_next = NodePath("../yes_button")
+focus_previous = NodePath("../yes_button")
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "No"
 
-[node name="data_deleted_screen" type="ColorRect" parent="background"]
+[node name="data_deleted_screen" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -357.0
-offset_top = -138.0
-offset_right = 357.0
-offset_bottom = 138.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="data_deleted_label" type="Label" parent="background/data_deleted_screen"]
+[node name="data_deleted_label" type="Label" parent="data_deleted_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -264.0
-offset_top = -61.0
-offset_right = 264.0
-offset_bottom = -29.0
+offset_left = -87.5
+offset_top = -12.5
+offset_right = 87.5
+offset_bottom = 12.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "All Progress deleted."
+horizontal_alignment = 1
 
-[node name="ok_button" type="Button" parent="background/data_deleted_screen"]
+[node name="ok_button" type="Button" parent="data_deleted_screen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = 31.0
-offset_right = 70.0
-offset_bottom = 71.0
+offset_left = -35.0
+offset_top = 3.38
+offset_right = 35.0
+offset_bottom = 23.38
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3tl86")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "Close"
 
 [connection signal="pressed" from="background/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="background/reset_progress_button" to="." method="_on_reset_progress_button_pressed"]
-[connection signal="mouse_exited" from="background/master_label/master_volume_slider" to="background/master_label/master_volume_slider" method="_on_mouse_exited"]
-[connection signal="value_changed" from="background/master_label/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
-[connection signal="mouse_exited" from="background/music_label/music_volume_slider" to="background/music_label/music_volume_slider" method="_on_mouse_exited"]
-[connection signal="value_changed" from="background/music_label/music_volume_slider" to="." method="_on_music_volume_slider_value_changed"]
-[connection signal="mouse_exited" from="background/sfx_label/sfx_volume_slider" to="background/sfx_label/sfx_volume_slider" method="_on_mouse_exited"]
-[connection signal="value_changed" from="background/sfx_label/sfx_volume_slider" to="." method="_on_sfx_volume_slider_value_changed"]
-[connection signal="pressed" from="background/you_sure_screen/yes_button" to="." method="_on_yes_button_pressed"]
-[connection signal="pressed" from="background/you_sure_screen/no_button" to="." method="_on_no_button_pressed"]
-[connection signal="pressed" from="background/data_deleted_screen/ok_button" to="." method="_on_ok_button_pressed"]
+[connection signal="mouse_exited" from="background/settings/master_label/master_volume_slider" to="background/settings/master_label/master_volume_slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="background/settings/master_label/master_volume_slider" to="." method="_on_master_volume_slider_value_changed"]
+[connection signal="mouse_exited" from="background/settings/music_label/music_volume_slider" to="background/settings/music_label/music_volume_slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="background/settings/music_label/music_volume_slider" to="." method="_on_music_volume_slider_value_changed"]
+[connection signal="mouse_exited" from="background/settings/sfx_label/sfx_volume_slider" to="background/settings/sfx_label/sfx_volume_slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="background/settings/sfx_label/sfx_volume_slider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="toggled" from="background/settings/fullscreen_label/check_box_fullscreen" to="." method="_on_check_box_fullscreen_toggled"]
+[connection signal="toggled" from="background/settings/integer_label/check_box_integer" to="." method="_on_check_box_integer_toggled"]
+[connection signal="pressed" from="you_sure_screen/yes_button" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="you_sure_screen/no_button" to="." method="_on_no_button_pressed"]
+[connection signal="pressed" from="data_deleted_screen/ok_button" to="." method="_on_ok_button_pressed"]

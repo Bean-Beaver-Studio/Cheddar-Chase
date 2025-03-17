@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cq501sdvos586"]
 
-[ext_resource type="FontFile" uid="uid://bos2geotawcoj" path="res://assets/tools/fonts/PixelOperator8.ttf" id="1_2if4o"]
+[ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="1_2if4o"]
 [ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_20cvk"]
-[ext_resource type="Texture2D" uid="uid://cv53vu076cw21" path="res://assets/heart/heart-filled.png" id="3_424o5"]
-[ext_resource type="Texture2D" uid="uid://mdwbhwkar180" path="res://assets/cat/stuff/fish_icon.png" id="3_b0tdp"]
-[ext_resource type="Texture2D" uid="uid://gusxf7vpp17l" path="res://assets/testlevel/star-hud-filled.png" id="5_4i32g"]
+[ext_resource type="Texture2D" uid="uid://cu5ug36mcdxmp" path="res://assets/menus/icons/heart-filled.png" id="3_424o5"]
+[ext_resource type="Texture2D" uid="uid://y3orj0xv8uj6" path="res://assets/cat/stuff/fish_icon.png" id="3_b0tdp"]
+[ext_resource type="Texture2D" uid="uid://dhbik5mwdusav" path="res://assets/menus/icons/star-hud-filled.png" id="5_4i32g"]
 
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_20cvk")
@@ -14,30 +14,32 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
-offset_top = -72.0
-offset_right = 640.0
+offset_top = -24.0
+offset_right = 166.0
 offset_bottom = -8.0
 grow_vertical = 0
+pivot_offset = Vector2(0, 16)
 theme_override_fonts/font = ExtResource("1_2if4o")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 16
 text = "1/999 Cheese"
+vertical_alignment = 2
 
 [node name="timer_label" type="Label" parent="."]
 offset_left = 8.0
-offset_top = 16.0
-offset_right = 640.0
-offset_bottom = 80.0
+offset_top = 8.0
+offset_right = 60.0
+offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("1_2if4o")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 16
 text = "00:00.00"
 
 [node name="star_time_label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 88.0
-offset_right = 640.0
-offset_bottom = 152.0
+offset_left = 9.0
+offset_top = 24.0
+offset_right = 47.0
+offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("1_2if4o")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 8
 text = "/00:00
 "
 
@@ -57,23 +59,23 @@ grow_vertical = 0
 
 [node name="fish_icon" type="Sprite2D" parent="anchor_control"]
 visible = false
-position = Vector2(72, 288)
-scale = Vector2(8, 8)
+position = Vector2(266, 320)
+scale = Vector2(2, 2)
 texture = ExtResource("3_b0tdp")
 
 [node name="heart_1" type="Sprite2D" parent="anchor_control"]
-position = Vector2(160, 288)
-scale = Vector2(8, 8)
+position = Vector2(288, 320)
+scale = Vector2(2, 2)
 texture = ExtResource("3_424o5")
 
 [node name="heart_2" type="Sprite2D" parent="anchor_control"]
-position = Vector2(224, 288)
-scale = Vector2(8, 8)
+position = Vector2(304, 320)
+scale = Vector2(2, 2)
 texture = ExtResource("3_424o5")
 
 [node name="heart_3" type="Sprite2D" parent="anchor_control"]
-position = Vector2(288, 288)
-scale = Vector2(8, 8)
+position = Vector2(320, 320)
+scale = Vector2(2, 2)
 texture = ExtResource("3_424o5")
 
 [node name="anchor_star" type="Control" parent="."]
@@ -81,21 +83,19 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
 grow_horizontal = 0
 
 [node name="star_1" type="Sprite2D" parent="anchor_star"]
-position = Vector2(-136, 40)
-scale = Vector2(8, 8)
+position = Vector2(-48, 14)
+scale = Vector2(2, 2)
 texture = ExtResource("5_4i32g")
 
 [node name="star_2" type="Sprite2D" parent="anchor_star"]
-position = Vector2(-72, 40)
-scale = Vector2(8, 8)
+position = Vector2(-32, 14)
+scale = Vector2(2, 2)
 texture = ExtResource("5_4i32g")
 
 [node name="star_3" type="Sprite2D" parent="anchor_star"]
-position = Vector2(-8, 40)
-scale = Vector2(8, 8)
+position = Vector2(-16, 14)
+scale = Vector2(2, 2)
 texture = ExtResource("5_4i32g")

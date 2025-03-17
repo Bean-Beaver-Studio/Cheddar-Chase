@@ -1,9 +1,31 @@
-[gd_scene load_steps=12 format=3 uid="uid://xkbgidfk0x0m"]
+[gd_scene load_steps=20 format=3 uid="uid://xkbgidfk0x0m"]
 
 [ext_resource type="Script" path="res://scripts/menus/level_icon.gd" id="1_tru2s"]
-[ext_resource type="FontFile" uid="uid://dwxiyviu3pln4" path="res://assets/tools/fonts/PixelOperator8.ttf" id="2_6dorg"]
-[ext_resource type="Texture2D" uid="uid://sku0kefliyju" path="res://assets/testlevel/level_icon.png" id="3_u7auv"]
-[ext_resource type="Texture2D" uid="uid://cgv6rv2xnnj05" path="res://assets/testlevel/star_filled.png" id="4_4gx2h"]
+[ext_resource type="FontFile" uid="uid://dm5jx6jx81a8k" path="res://assets/fonts/PixelOperator8.ttf" id="2_6dorg"]
+[ext_resource type="Texture2D" uid="uid://dp408mhttgwj8" path="res://assets/menus/icons/level_icon.png" id="3_u7auv"]
+[ext_resource type="Texture2D" uid="uid://cy7gfn1dp4jci" path="res://assets/menus/icons/star_filled.png" id="4_4gx2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqfrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aulhd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohijm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p1ves"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2xkn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_531r6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1beq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t8qeb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xpwqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_duj2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41oa8"]
 
 [sub_resource type="Theme" id="Theme_k8b5q"]
 
@@ -14,22 +36,9 @@ colors = PackedColorArray(0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_pxkn5"]
 gradient = SubResource("Gradient_6ujbv")
 
-[sub_resource type="Gradient" id="Gradient_2v4yl"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.478431, 0.670588, 1, 0.784314)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2bcaj"]
-gradient = SubResource("Gradient_2v4yl")
-
 [sub_resource type="Theme" id="Theme_nad0m"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_dbju3"]
-font_size = 24
-shadow_size = 4
-shadow_color = Color(0, 0, 0, 1)
-
-[node name="level_icon" type="Control"]
-layout_mode = 3
+[node name="level_icon" type="Button"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -41,6 +50,18 @@ offset_right = 32.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qqfrj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_aulhd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ohijm")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_p1ves")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e2xkn")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_531r6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c1beq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_t8qeb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xpwqq")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_duj2h")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_41oa8")
 script = ExtResource("1_tru2s")
 
 [node name="background" type="TextureRect" parent="."]
@@ -50,51 +71,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -71.0
-offset_right = 85.0
-offset_bottom = -36.0
+offset_left = -30.0
+offset_top = -18.0
+offset_right = 30.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_k8b5q")
 texture = SubResource("GradientTexture1D_pxkn5")
 expand_mode = 2
 
-[node name="background_shadow" type="TextureRect" parent="."]
+[node name="label" type="Label" parent="background"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -83.0
-offset_top = -69.0
-offset_right = 83.0
-offset_bottom = -38.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_k8b5q")
-texture = SubResource("GradientTexture1D_2bcaj")
-expand_mode = 2
-
-[node name="label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -66.0
-offset_top = -65.0
-offset_right = 66.0
-offset_bottom = -41.0
+offset_left = -21.5
+offset_top = -3.5
+offset_right = 22.5
+offset_bottom = 4.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_nad0m")
 theme_override_fonts/font = ExtResource("2_6dorg")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 8
 text = "Level 1"
-label_settings = SubResource("LabelSettings_dbju3")
 
 [node name="level_icon" type="TextureRect" parent="."]
 layout_mode = 1
@@ -103,13 +106,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -64.0
-offset_top = -33.0
-offset_bottom = 31.0
+offset_left = -16.0
+offset_top = -4.0
+offset_right = 16.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 texture = ExtResource("3_u7auv")
+stretch_mode = 3
 
 [node name="star_1" type="TextureRect" parent="."]
 layout_mode = 1
@@ -118,14 +122,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -106.0
-offset_top = -72.0
-offset_right = -66.0
-offset_bottom = -32.0
+offset_left = -29.0
+offset_top = -16.0
+offset_right = 3.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
 texture = ExtResource("4_4gx2h")
+stretch_mode = 3
 
 [node name="star_2" type="TextureRect" parent="."]
 layout_mode = 1
@@ -134,14 +138,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.0
-offset_top = -72.0
-offset_right = -22.0
-offset_bottom = -32.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
 texture = ExtResource("4_4gx2h")
+stretch_mode = 3
 
 [node name="star_3" type="TextureRect" parent="."]
 layout_mode = 1
@@ -150,11 +154,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -72.0
-offset_right = 22.0
-offset_bottom = -32.0
+offset_left = -3.0
+offset_top = -16.0
+offset_right = 29.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
 texture = ExtResource("4_4gx2h")
+stretch_mode = 3
