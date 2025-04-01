@@ -150,7 +150,15 @@ func handle_movement_and_actions(delta):
 			is_rolling = true
 			roll_timer = roll_duration
 			velocity = velocity.normalized() * roll_speed
-			animated_sprite_2d.play("roll")
+			
+			# Check for diagonal movement
+			if input_vector.x != 0 and input_vector.y != 0:
+				animated_sprite_2d.play("roll_diag")
+				animated_sprite_2d.rotation = velocity.angle() + PI/4
+			else:
+				animated_sprite_2d.play("roll")
+				animated_sprite_2d.rotation = velocity.angle()
+			
 			audio_rolling.play()
 			hurt_box.disable_hurtbox()
 	
