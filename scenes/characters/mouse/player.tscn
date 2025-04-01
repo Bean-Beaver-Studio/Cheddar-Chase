@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://dnlv8wuw8y7et"]
+[gd_scene load_steps=122 format=3 uid="uid://dnlv8wuw8y7et"]
 
 [ext_resource type="Script" path="res://scripts/characters/mouse/player.gd" id="1_p3jmh"]
 [ext_resource type="PackedScene" uid="uid://cq501sdvos586" path="res://scenes/tools/hud.tscn" id="2_ynafe"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bkvxdpci50a45" path="res://assets/characters/mouse/canvas_texture/idle_canvas_texture.tres" id="9_dwdye"]
 [ext_resource type="Texture2D" uid="uid://c6tb2ks3hlmti" path="res://assets/characters/mouse/canvas_texture/obstruct_canvas_texture.tres" id="10_ruofq"]
 [ext_resource type="Texture2D" uid="uid://cuy32wt5xiix3" path="res://assets/characters/mouse/canvas_texture/roll_canvas_texture.tres" id="11_2g5pe"]
+[ext_resource type="Texture2D" uid="uid://bxa5a88uqah07" path="res://assets/characters/mouse/diffuse/walk_diag.png" id="13_hd5sx"]
 [ext_resource type="AudioStream" uid="uid://df14mkf2nk05j" path="res://assets/characters/mouse/audio/walking.wav" id="14_x6vs6"]
 [ext_resource type="AudioStream" uid="uid://bmmcyel1p7l5d" path="res://assets/characters/mouse/audio/falling.wav" id="15_xmuk8"]
 [ext_resource type="AudioStream" uid="uid://dydk8ikkgkfpf" path="res://assets/characters/mouse/audio/attack_1.wav" id="16_k66u4"]
@@ -378,6 +379,22 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("3_8gnm7")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrnaq"]
+atlas = ExtResource("13_hd5sx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlbrj"]
+atlas = ExtResource("13_hd5sx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq2ra"]
+atlas = ExtResource("13_hd5sx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf1pn"]
+atlas = ExtResource("13_hd5sx")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_copu8"]
 animations = [{
 "frames": [{
@@ -688,6 +705,23 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrnaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlbrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq2ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf1pn")
+}],
+"loop": true,
+"name": &"walk_diag",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ua4rr"]
@@ -713,11 +747,10 @@ unique_name_in_owner = true
 [node name="animated_sprite_mouse" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_1ig76")
 sprite_frames = SubResource("SpriteFrames_copu8")
-animation = &"attack_left"
+animation = &"walk_diag"
 speed_scale = 2.0
 
 [node name="camera_2d" type="Camera2D" parent="."]
-position_smoothing_enabled = true
 
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(0.6, 0.6)

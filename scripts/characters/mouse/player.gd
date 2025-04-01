@@ -84,7 +84,7 @@ func handle_movement_and_actions(delta):
 		
 		if roll_timer <= 0:
 			is_rolling = false
-			animated_sprite_2d.play("walk")
+			# animated_sprite_2d.play("walk")
 			hurt_box.enable_hurtbox()
 		else:
 			velocity = velocity.normalized() * lerp(roll_speed, 0, 1 - (roll_timer / roll_duration))
@@ -103,15 +103,7 @@ func handle_movement_and_actions(delta):
 				animated_sprite_2d.play("idle")
 			velocity = Vector2.ZERO
 		else:
-			var input_vector = Vector2.ZERO
-			if Input.is_action_pressed("ui_right"):
-				input_vector.x += 1
-			if Input.is_action_pressed("ui_left"):
-				input_vector.x -= 1
-			if Input.is_action_pressed("ui_down"):
-				input_vector.y += 1
-			if Input.is_action_pressed("ui_up"):
-				input_vector.y -= 1
+			var input_vector  = get_input_vector()
 	
 			if input_vector.length() > 0:
 				player_direction = input_vector.normalized()
@@ -126,28 +118,29 @@ func handle_movement_and_actions(delta):
 			velocity = Vector2.ZERO  # Prevent movement while falling
 			return  # Exit the function if falling
 		
-		var input_vector = Vector2.ZERO
-		if Input.is_action_pressed("ui_right"):
-			input_vector.x += 1
-		if Input.is_action_pressed("ui_left"):
-			input_vector.x -= 1
-		if Input.is_action_pressed("ui_down"):
-			input_vector.y += 1
-		if Input.is_action_pressed("ui_up"):
-			input_vector.y -= 1
+		var input_vector = get_input_vector()
 
 		if input_vector.length() > 0:
 			player_direction = input_vector.normalized()
 			velocity = player_direction * speed
-			
+
 			if !is_colliding():
-				animated_sprite_2d.play("walk")
+				# Check for diagonal movement
+				if input_vector.x != 0 and input_vector.y != 0:
+					animated_sprite_2d.play("walk_diag")
+					animated_sprite_2d.rotation = velocity.angle() + PI/4
+				else:
+					animated_sprite_2d.play("walk")
+					animated_sprite_2d.rotation = velocity.angle()
+
+	
 				if !audio_walk.playing:
 					audio_walk.play()
-			animated_sprite_2d.rotation = velocity.angle()
+
 		else:
 			velocity = Vector2.ZERO
 			audio_walk.stop()
+
 			
 			if !is_attacking and !is_rolling:
 				animated_sprite_2d.play("idle")
@@ -181,6 +174,20 @@ func handle_movement_and_actions(delta):
 	# Play obstruct animation if there is a collision and not rolling
 	if is_colliding() and !is_rolling and !is_attacking and !is_falling:
 		animated_sprite_2d.play("obstruct")
+
+func get_input_vector() -> Vector2:
+	var input_vector = Vector2.ZERO
+	
+	if Input.is_action_pressed("ui_right"):
+		input_vector.x += 1
+	if Input.is_action_pressed("ui_left"):
+		input_vector.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		input_vector.y += 1
+	if Input.is_action_pressed("ui_up"):
+		input_vector.y -= 1
+	
+	return input_vector
 
 # Function to check for collision
 func is_colliding() -> bool:
