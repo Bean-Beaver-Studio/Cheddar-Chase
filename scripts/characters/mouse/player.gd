@@ -7,7 +7,7 @@ var roll_duration = 0.5
 var is_rolling = false
 var roll_timer = 0.0
 var is_attacking = false
-var attack_duration = 0.5  
+var attack_duration = 0.5
 var is_falling = false
 var is_flying = false
 var attack_switch = false
@@ -15,8 +15,8 @@ var is_invincible = false
 var player_direction = Vector2.RIGHT
 
 # Cooldown variables
-var attack_cooldown = 0.7 
-var attack_timer = 0.0 
+var attack_cooldown = 0.7
+var attack_timer = 0.0
 
 # Spawn
 var spawn_point: Vector2
@@ -55,8 +55,8 @@ func _ready():
 	spawn_point = global_position
 	animated_sprite_2d.connect("animation_finished", Callable(self, "_on_animation_finished"))
 	hurt_box.connect("body_entered", Callable(self, "_on_hurtbox_body_entered"))
-	hit_box.disable_hitbox()  # Ensure hitbox is disabled initially
-	hurt_box.enable_hurtbox()  # Ensure hurtbox is enabled initially
+	hit_box.disable_hitbox() # Ensure hitbox is disabled initially
+	hurt_box.enable_hurtbox() # Ensure hurtbox is enabled initially
 	hud.update_health(current_health) # Initialize health in HUD
 
 func _process(delta):
@@ -76,8 +76,13 @@ func _process(delta):
 	
 	move_and_slide()
 
-# Function to handle the movement and actions
+# Function to handle the movement and actions, actions are prioritized by the order they appear.
 func handle_movement_and_actions(delta):
+	# Falling logic
+	if is_falling:
+		velocity = Vector2.ZERO
+		return
+	
 	# Rolling logic
 	if is_rolling:
 		roll_timer -= delta
@@ -91,11 +96,6 @@ func handle_movement_and_actions(delta):
 	
 	# Attacking logic
 	elif is_attacking:
-		
-		if is_falling:
-			velocity = Vector2.ZERO  # Prevent movement while falling
-			return  # Exit the function if falling
-		
 		if !animated_sprite_2d.is_playing():
 			is_attacking = false
 			
@@ -103,7 +103,7 @@ func handle_movement_and_actions(delta):
 				animated_sprite_2d.play("idle")
 			velocity = Vector2.ZERO
 		else:
-			var input_vector  = get_input_vector()
+			var input_vector = get_input_vector()
 	
 			if input_vector.length() > 0:
 				player_direction = input_vector.normalized()
@@ -113,11 +113,6 @@ func handle_movement_and_actions(delta):
 				velocity = Vector2.ZERO
 	
 	else:
-		# Handle normal movement input if not rolling or attacking
-		if is_falling:
-			velocity = Vector2.ZERO  # Prevent movement while falling
-			return  # Exit the function if falling
-		
 		var input_vector = get_input_vector()
 
 		if input_vector.length() > 0:
@@ -128,7 +123,7 @@ func handle_movement_and_actions(delta):
 				# Check for diagonal movement
 				if input_vector.x != 0 and input_vector.y != 0:
 					animated_sprite_2d.play("walk_diag")
-					animated_sprite_2d.rotation = velocity.angle() + PI/4
+					animated_sprite_2d.rotation = velocity.angle() + PI / 4
 				else:
 					animated_sprite_2d.play("walk")
 					animated_sprite_2d.rotation = velocity.angle()
@@ -154,7 +149,7 @@ func handle_movement_and_actions(delta):
 			# Check for diagonal movement
 			if input_vector.x != 0 and input_vector.y != 0:
 				animated_sprite_2d.play("roll_diag")
-				animated_sprite_2d.rotation = velocity.angle() + PI/4
+				animated_sprite_2d.rotation = velocity.angle() + PI / 4
 			else:
 				animated_sprite_2d.play("roll")
 				animated_sprite_2d.rotation = velocity.angle()
@@ -165,7 +160,7 @@ func handle_movement_and_actions(delta):
 	# Play attack animation if attack button is pressed and not rolling, not falling, and cooldown has passed
 	if Input.is_action_just_pressed("ui_attack") and !is_rolling and !is_falling and attack_timer <= 0:
 		is_attacking = true
-		attack_timer = attack_cooldown  # Reset the cooldown timer
+		attack_timer = attack_cooldown # Reset the cooldown timer
 		
 		if attack_switch:
 			animated_sprite_2d.play("attack_right")
@@ -244,7 +239,7 @@ func start_invincibility() -> void:
 	invincibility_timer.start(1.0)
 
 # Function to handle player death
-func die():	
+func die():
 	is_dead = true
 	animated_sprite_2d.play("death")
 	Engine.time_scale = 0.5
@@ -260,7 +255,7 @@ func _on_hurtbox_body_entered(body):
 func _on_animation_finished() -> void:
 	if is_rolling:
 		is_rolling = false
-		animated_sprite_2d.play("walk")  
+		animated_sprite_2d.play("walk")
 	elif is_attacking:
 		is_attacking = false
 		hit_box.disable_hitbox()
@@ -271,6 +266,8 @@ func _on_animation_finished() -> void:
 		velocity = Vector2.ZERO
 
 # Function to handle when the player falls into a pit
+# pit.gd tries to find this method for every character that falls in.
+# This is why the function is not connected to any signal
 func fall_in_pit():
 	if is_falling:
 		return
@@ -290,12 +287,6 @@ func fall_in_pit():
 	await tween.finished
 	
 	is_falling = false
-
-func play_cheese_sound() -> void:
-	audio_eaten.play()
-
-func play_heart_sound() -> void:
-	audio_heart.play()
 
 func _on_invincibility_timer_timeout() -> void:
 	is_invincible = false
