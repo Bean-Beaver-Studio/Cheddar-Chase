@@ -109,7 +109,6 @@ func handle_movement_and_actions():
 	
 	# Rolling logic
 	if is_rolling:
-		
 		# End rolling
 		if roll_timer <= 0:
 			is_rolling = false
@@ -150,6 +149,13 @@ func handle_movement_and_actions():
 		
 		animated_sprite_2d.play("attack_right")
 		audio_attack_right.play()
+
+		# Check for diagonal movement
+		if player_direction.x != 0 and player_direction.y != 0:
+			animated_sprite_2d.rotation = velocity.angle() - PI / 4
+		else:
+			animated_sprite_2d.rotation = velocity.angle()
+
 		
 		hit_box.enable_hitbox()
 		hurt_box.disable_hurtbox()
