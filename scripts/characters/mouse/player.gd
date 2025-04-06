@@ -12,6 +12,7 @@ var is_falling = false
 var is_flying = false
 var is_invincible = false
 var player_direction = Vector2.RIGHT
+var roll_diretion = Vector2.RIGHT
 
 # Cooldown variables
 var attack_cooldown = 0.7
@@ -61,7 +62,10 @@ func _process(delta):
 	if is_dead:
 		return
 	
-	# Update attack cooldown timer
+	# Update timers
+	if roll_timer > 0:
+		roll_timer -= delta
+
 	if attack_timer > 0:
 		attack_timer -= delta
 	
@@ -69,20 +73,22 @@ func _process(delta):
 		knockback_timer -= delta
 		velocity = knockback_velocity
 		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 5 * delta)
+	# if no knockback
 	else:
-		handle_movement_and_actions(delta)
+		handle_movement_and_actions()
 	
 	move_and_slide()
 
 # Function to handle the movement and actions, actions are prioritized by the order they appear.
-func handle_movement_and_actions(delta):
+func handle_movement_and_actions():
 	# ----- Handle input -----
 	var input_vector = get_input_vector()
 
-	# Jump
+	# Roll
 	if Input.is_action_just_pressed("ui_jump") and input_vector.length() > 0 and not is_rolling:
 		is_rolling = true
 		roll_timer = roll_duration
+		roll_diretion = player_direction
 
 	# Attack
 	if Input.is_action_just_pressed("ui_attack") and !is_rolling and !is_falling and attack_timer <= 0:
@@ -92,6 +98,7 @@ func handle_movement_and_actions(delta):
 	# Obstruct
 	if is_colliding() and !is_rolling and !is_attacking and !is_falling:
 		animated_sprite_2d.play("obstruct")
+		animated_sprite_2d.rotation = input_vector.angle()
 
 	# ----- States -----
 	
@@ -102,7 +109,6 @@ func handle_movement_and_actions(delta):
 	
 	# Rolling logic
 	if is_rolling:
-		roll_timer -= delta
 		
 		# End rolling
 		if roll_timer <= 0:
@@ -111,17 +117,16 @@ func handle_movement_and_actions(delta):
 			return
 		
 		# Start rolling
-
 		velocity = velocity.normalized() * lerp(roll_speed, 0, 1 - (roll_timer / roll_duration))
-	
+
 		# Check for diagonal movement
-		if input_vector.x != 0 and input_vector.y != 0:
+		if roll_diretion.x != 0 and roll_diretion.y != 0:
 			animated_sprite_2d.play("roll_diag")
 			animated_sprite_2d.rotation = velocity.angle() + PI / 4
 		else:
 			animated_sprite_2d.play("roll")
 			animated_sprite_2d.rotation = velocity.angle()
-		
+
 		audio_rolling.play()
 		hurt_box.disable_hurtbox()
 		return
@@ -134,6 +139,8 @@ func handle_movement_and_actions(delta):
 			hit_box.disable_hitbox()
 			hurt_box.enable_hurtbox()
 			return
+
+		# Start attack
 
 		# Add the possibility to walk while doing the attack 
 		if input_vector.length() > 0:
