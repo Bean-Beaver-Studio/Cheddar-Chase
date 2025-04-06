@@ -10,7 +10,6 @@ var is_attacking = false
 var attack_duration = 0.5
 var is_falling = false
 var is_flying = false
-var attack_switch = false
 var is_invincible = false
 var player_direction = Vector2.RIGHT
 
@@ -37,7 +36,6 @@ var knockback_strength = 220
 # Audio references
 @onready var audio_walk: AudioStreamPlayer2D = $audio/audio_walk
 @onready var audio_fall: AudioStreamPlayer2D = $audio/audio_fall
-@onready var audio_attack_left: AudioStreamPlayer2D = $audio/audio_attack_left
 @onready var audio_attack_right: AudioStreamPlayer2D = $audio/audio_attack_right
 @onready var audio_damaged: AudioStreamPlayer2D = $audio/audio_damaged
 @onready var audio_rolling: AudioStreamPlayer2D = $audio/audio_rolling
@@ -78,7 +76,26 @@ func _process(delta):
 
 # Function to handle the movement and actions, actions are prioritized by the order they appear.
 func handle_movement_and_actions(delta):
-	# Falling logic
+	# ----- Handle input -----
+	var input_vector = get_input_vector()
+
+	# Jump
+	if Input.is_action_just_pressed("ui_jump") and input_vector.length() > 0 and not is_rolling:
+		is_rolling = true
+		roll_timer = roll_duration
+
+	# Attack
+	if Input.is_action_just_pressed("ui_attack") and !is_rolling and !is_falling and attack_timer <= 0:
+		is_attacking = true
+		attack_timer = attack_duration
+		
+	# Obstruct
+	if is_colliding() and !is_rolling and !is_attacking and !is_falling:
+		animated_sprite_2d.play("obstruct")
+
+	# ----- States -----
+	
+	# Falling logic (the rest can be found in fall_in_pit(), which is triggered from pit.gd)
 	if is_falling:
 		velocity = Vector2.ZERO
 		return
@@ -87,96 +104,75 @@ func handle_movement_and_actions(delta):
 	if is_rolling:
 		roll_timer -= delta
 		
+		# End rolling
 		if roll_timer <= 0:
 			is_rolling = false
-			# animated_sprite_2d.play("walk")
 			hurt_box.enable_hurtbox()
-		else:
-			velocity = velocity.normalized() * lerp(roll_speed, 0, 1 - (roll_timer / roll_duration))
-	
-	# Attacking logic
-	elif is_attacking:
-		if !animated_sprite_2d.is_playing():
-			is_attacking = false
-			
-			if !is_rolling:
-				animated_sprite_2d.play("idle")
-			velocity = Vector2.ZERO
-		else:
-			var input_vector = get_input_vector()
-	
-			if input_vector.length() > 0:
-				player_direction = input_vector.normalized()
-				velocity = player_direction * speed
-				animated_sprite_2d.rotation = velocity.angle()
-			else:
-				velocity = Vector2.ZERO
-	
-	else:
-		var input_vector = get_input_vector()
+			return
+		
+		# Start rolling
 
+		velocity = velocity.normalized() * lerp(roll_speed, 0, 1 - (roll_timer / roll_duration))
+	
+		# Check for diagonal movement
+		if input_vector.x != 0 and input_vector.y != 0:
+			animated_sprite_2d.play("roll_diag")
+			animated_sprite_2d.rotation = velocity.angle() + PI / 4
+		else:
+			animated_sprite_2d.play("roll")
+			animated_sprite_2d.rotation = velocity.angle()
+		
+		audio_rolling.play()
+		hurt_box.disable_hurtbox()
+		return
+
+	# Attacking logic
+	if is_attacking:
+		# End attack
+		if attack_timer <= 0:
+			is_attacking = false
+			hit_box.disable_hitbox()
+			hurt_box.enable_hurtbox()
+			return
+
+		# Add the possibility to walk while doing the attack 
 		if input_vector.length() > 0:
 			player_direction = input_vector.normalized()
 			velocity = player_direction * speed
-
-			if !is_colliding():
-				# Check for diagonal movement
-				if input_vector.x != 0 and input_vector.y != 0:
-					animated_sprite_2d.play("walk_diag")
-					animated_sprite_2d.rotation = velocity.angle() + PI / 4
-				else:
-					animated_sprite_2d.play("walk")
-					animated_sprite_2d.rotation = velocity.angle()
-
-	
-				if !audio_walk.playing:
-					audio_walk.play()
-
-		else:
-			velocity = Vector2.ZERO
-			audio_walk.stop()
-
-			
-			if !is_attacking and !is_rolling:
-				animated_sprite_2d.play("idle")
-	
-		# Roll mechanic: Only allow rolling if there is movement input and the roll action is just pressed
-		if Input.is_action_just_pressed("ui_jump") and input_vector.length() > 0:
-			is_rolling = true
-			roll_timer = roll_duration
-			velocity = velocity.normalized() * roll_speed
-			
-			# Check for diagonal movement
-			if input_vector.x != 0 and input_vector.y != 0:
-				animated_sprite_2d.play("roll_diag")
-				animated_sprite_2d.rotation = velocity.angle() + PI / 4
-			else:
-				animated_sprite_2d.play("roll")
-				animated_sprite_2d.rotation = velocity.angle()
-			
-			audio_rolling.play()
-			hurt_box.disable_hurtbox()
-	
-	# Play attack animation if attack button is pressed and not rolling, not falling, and cooldown has passed
-	if Input.is_action_just_pressed("ui_attack") and !is_rolling and !is_falling and attack_timer <= 0:
-		is_attacking = true
-		attack_timer = attack_cooldown # Reset the cooldown timer
+			animated_sprite_2d.rotation = velocity.angle()
 		
-		if attack_switch:
-			animated_sprite_2d.play("attack_right")
-			audio_attack_right.play()
-			attack_switch = false
-		else:
-			animated_sprite_2d.play("attack_left")
-			audio_attack_left.play()
-			attack_switch = true
+		animated_sprite_2d.play("attack_right")
+		audio_attack_right.play()
 		
 		hit_box.enable_hitbox()
 		hurt_box.disable_hurtbox()
-	
-	# Play obstruct animation if there is a collision and not rolling
-	if is_colliding() and !is_rolling and !is_attacking and !is_falling:
-		animated_sprite_2d.play("obstruct")
+		return
+		
+	# ----- Default: walking and being idle -----
+
+	# Walking
+	if input_vector.length() > 0:
+		player_direction = input_vector.normalized()
+		velocity = player_direction * speed
+
+		if !is_colliding():
+			# Check for diagonal movement
+			if input_vector.x != 0 and input_vector.y != 0:
+				animated_sprite_2d.play("walk_diag")
+				animated_sprite_2d.rotation = velocity.angle() + PI / 4
+			else:
+				animated_sprite_2d.play("walk")
+				animated_sprite_2d.rotation = velocity.angle()
+
+
+			if !audio_walk.playing:
+				audio_walk.play()
+	# Idle
+	else:
+		velocity = Vector2.ZERO
+		audio_walk.stop()
+		animated_sprite_2d.play("idle")
+
 
 func get_input_vector() -> Vector2:
 	var input_vector = Vector2.ZERO
