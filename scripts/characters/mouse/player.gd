@@ -121,7 +121,7 @@ func handle_movement_and_actions():
 			return
 		
 		# Start rolling
-		velocity = velocity.normalized() * lerp(roll_speed, 0, 1 - (roll_timer / roll_duration))
+		velocity = roll_diretion * lerp(roll_speed, 0, 1 - (roll_timer / roll_duration))
 
 		# Check for diagonal movement
 		if roll_diretion.x != 0 and roll_diretion.y != 0:
