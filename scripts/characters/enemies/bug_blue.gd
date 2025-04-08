@@ -69,7 +69,7 @@ func _physics_process(delta):
 	
 
 func snap_animation_sprite() -> void:
-	if velocity == Vector2.ZERO and knockback_velocity == Vector2.ZERO:
+	if velocity == Vector2.ZERO:
 		return
 
 	# Calulate snapping index (0-7)
