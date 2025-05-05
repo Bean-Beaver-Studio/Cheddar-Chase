@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c77o6o8vwsqnh"]
+[gd_scene load_steps=18 format=4 uid="uid://c77o6o8vwsqnh"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_5.gd" id="1_8dojf"]
 [ext_resource type="PackedScene" uid="uid://doxu1wbw651md" path="res://scenes/tools/level_time.tscn" id="2_ndrm0"]
@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="11_hlyle"]
 [ext_resource type="PackedScene" uid="uid://bw5xityvbf8d2" path="res://scenes/characters/enemies/bug_flying.tscn" id="12_i2eeh"]
 [ext_resource type="PackedScene" uid="uid://d4bboajpgnlfq" path="res://scenes/collectibles/health.tscn" id="12_ydf7f"]
-[ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="13_fmpub"]
 [ext_resource type="PackedScene" uid="uid://bd00qhbwn5hyd" path="res://scenes/characters/enemies/bug_flying_shooter.tscn" id="15_iwpi7"]
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="15_s0aoh"]
 
@@ -225,81 +224,6 @@ position = Vector2(-80, 40)
 
 [node name="bug_flying_4" parent="enemies" instance=ExtResource("12_i2eeh")]
 position = Vector2(208, 40)
-
-[node name="bug_blue_1" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-42, -194)
-
-[node name="bug_blue_2" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-191, -111)
-
-[node name="bug_blue_3" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-149, 25)
-
-[node name="bug_blue_4" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-231, -5)
-
-[node name="bug_blue_5" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-239, 171)
-
-[node name="bug_blue_6" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-136, 206)
-
-[node name="bug_blue_7" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(-134, 294)
-
-[node name="bug_blue_8" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(27, 216)
-
-[node name="bug_blue_9" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(45, 297)
-
-[node name="bug_blue_10" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(133, 265)
-
-[node name="bug_blue_11" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(210, 301)
-
-[node name="bug_blue_12" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(284, 253)
-
-[node name="bug_blue_13" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(362, 302)
-
-[node name="bug_blue_14" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(366, 204)
-
-[node name="bug_blue_15" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(308, 135)
-
-[node name="bug_blue_16" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(359, 78)
-
-[node name="bug_blue_17" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(285, 14)
-
-[node name="bug_blue_18" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(358, -59)
-
-[node name="bug_blue_19" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(285, -113)
-
-[node name="bug_blue_20" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(351, -196)
-
-[node name="bug_blue_21" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(194, -141)
-
-[node name="bug_blue_22" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(135, -190)
-
-[node name="bug_blue_23" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(62, -173)
-
-[node name="bug_blue_24" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(23, -83)
-
-[node name="bug_blue_25" parent="enemies" instance=ExtResource("13_fmpub")]
-position = Vector2(119, -91)
 
 [node name="bug_red_1" parent="enemies" instance=ExtResource("15_s0aoh")]
 position = Vector2(-240, 96)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dni2huswsn7rp"]
+[gd_scene load_steps=19 format=4 uid="uid://dni2huswsn7rp"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_1.gd" id="1_oxshq"]
 [ext_resource type="PackedScene" uid="uid://doxu1wbw651md" path="res://scenes/tools/level_time.tscn" id="2_15cmg"]
@@ -14,7 +14,6 @@
 [ext_resource type="FontFile" uid="uid://dbrf4uwq560ck" path="res://assets/fonts/PixelOperator8.ttf" id="10_lygur"]
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="11_lbb3u"]
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="12_vwfu5"]
-[ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="13_jvws1"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="15_ba35b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xfxth"]
@@ -147,8 +146,8 @@ position = Vector2(1328, 64)
 [node name="bug_red_3" parent="enemies" instance=ExtResource("12_vwfu5")]
 position = Vector2(1328, -96)
 
-[node name="bug_blue_1" parent="enemies" instance=ExtResource("13_jvws1")]
-position = Vector2(1408, -16)
+[node name="bug_red_4" parent="enemies" instance=ExtResource("12_vwfu5")]
+position = Vector2(1404, -12)
 
 [node name="player" type="Node" parent="."]
 

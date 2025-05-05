@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dni2huswsn7rp"]
+[gd_scene load_steps=14 format=4 uid="uid://dni2huswsn7rp"]
 
 [ext_resource type="Script" path="res://scripts/levels/level_2.gd" id="1_yu346"]
 [ext_resource type="PackedScene" uid="uid://doxu1wbw651md" path="res://scenes/tools/level_time.tscn" id="2_ctq8h"]
@@ -10,8 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="6_odnj8"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="7_ma6rg"]
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="8_khwp8"]
-[ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="9_eaesg"]
-[ext_resource type="PackedScene" uid="uid://b6pkedphn6qas" path="res://scenes/characters/enemies/bug_green.tscn" id="10_6dbjf"]
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="11_vw18i"]
 [ext_resource type="PackedScene" uid="uid://cs03yq5n5ibww" path="res://scenes/characters/enemies/pit.tscn" id="12_gnqvo"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="13_3g2b7"]
@@ -104,24 +102,6 @@ position = Vector2(880, 48)
 
 [node name="enemies" type="Node" parent="."]
 
-[node name="bug_blue_1" parent="enemies" instance=ExtResource("9_eaesg")]
-position = Vector2(176, 86)
-
-[node name="bug_blue_2" parent="enemies" instance=ExtResource("9_eaesg")]
-position = Vector2(208, 105)
-
-[node name="bug_blue_3" parent="enemies" instance=ExtResource("9_eaesg")]
-position = Vector2(240, 87)
-
-[node name="bug_blue_4" parent="enemies" instance=ExtResource("9_eaesg")]
-position = Vector2(240, -87)
-
-[node name="bug_blue_5" parent="enemies" instance=ExtResource("9_eaesg")]
-position = Vector2(176, -88)
-
-[node name="bug_blue_6" parent="enemies" instance=ExtResource("9_eaesg")]
-position = Vector2(208, -103)
-
 [node name="bug_red_1" parent="enemies" instance=ExtResource("8_khwp8")]
 position = Vector2(472, 32)
 
@@ -152,8 +132,23 @@ position = Vector2(832, -72)
 [node name="bug_red_10" parent="enemies" instance=ExtResource("8_khwp8")]
 position = Vector2(832, 72)
 
-[node name="bug_green_1" parent="enemies" instance=ExtResource("10_6dbjf")]
-position = Vector2(904, 0)
+[node name="bug_red_11" parent="enemies" instance=ExtResource("8_khwp8")]
+position = Vector2(172, -96)
+
+[node name="bug_red_12" parent="enemies" instance=ExtResource("8_khwp8")]
+position = Vector2(209, -114)
+
+[node name="bug_red_13" parent="enemies" instance=ExtResource("8_khwp8")]
+position = Vector2(239, -94)
+
+[node name="bug_red_14" parent="enemies" instance=ExtResource("8_khwp8")]
+position = Vector2(172, 91)
+
+[node name="bug_red_15" parent="enemies" instance=ExtResource("8_khwp8")]
+position = Vector2(206, 112)
+
+[node name="bug_red_16" parent="enemies" instance=ExtResource("8_khwp8")]
+position = Vector2(239, 89)
 
 [node name="player" type="Node" parent="."]
 
