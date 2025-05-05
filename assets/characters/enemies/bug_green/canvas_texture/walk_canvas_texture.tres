@@ -1,8 +1,0 @@
-[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://c4cus0skfp1i5"]
-
-[ext_resource type="Texture2D" uid="uid://ddcvt7rpvf871" path="res://assets/characters/enemies/bug_green/diffuse/walk.png" id="1_g2wk5"]
-[ext_resource type="Texture2D" uid="uid://bq2qicv72jqa7" path="res://assets/characters/enemies/bug_green/normal/walk_normal.png" id="2_a31fj"]
-
-[resource]
-diffuse_texture = ExtResource("1_g2wk5")
-normal_texture = ExtResource("2_a31fj")
