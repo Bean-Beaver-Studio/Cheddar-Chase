@@ -1,13 +1,17 @@
-[gd_scene load_steps=36 format=3 uid="uid://ct4xnrb6ua7pq"]
+[gd_scene load_steps=38 format=3 uid="uid://ct4xnrb6ua7pq"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/bug_red.gd" id="1_nut6h"]
 [ext_resource type="Texture2D" uid="uid://pqypm64qubrr" path="res://assets/characters/enemies/bug_red/canvas_texture/death_canvas_texture.tres" id="3_2rjht"]
 [ext_resource type="PackedScene" uid="uid://cxb8foogagtu4" path="res://scenes/tools/hurt_box.tscn" id="3_fnqh4"]
 [ext_resource type="Texture2D" uid="uid://duevadg5uqmc7" path="res://assets/characters/enemies/bug_red/canvas_texture/walk_diag_canvas_texture.tres" id="4_fbkqr"]
+[ext_resource type="Shader" path="res://scripts/tools/toon-shader.gdshader" id="4_vl3ts"]
 [ext_resource type="Texture2D" uid="uid://dwt1o582nfjk" path="res://assets/characters/enemies/bug_red/canvas_texture/walk_canvas_texture.tres" id="4_y2d1u"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="6_wrc18"]
 [ext_resource type="AudioStream" uid="uid://2jdbt2v3kslj" path="res://assets/characters/enemies/bug_damaged.wav" id="7_tmkto"]
 [ext_resource type="AudioStream" uid="uid://cqrdyiny05iwb" path="res://assets/characters/enemies/bug_death.wav" id="8_1dnkn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkfa5"]
+shader = ExtResource("4_vl3ts")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_naty4"]
 atlas = ExtResource("3_2rjht")
@@ -199,6 +203,7 @@ collision_mask = 137
 script = ExtResource("1_nut6h")
 
 [node name="animated_sprite_bug_red" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_gkfa5")
 sprite_frames = SubResource("SpriteFrames_7owlx")
 animation = &"walk_diag"
 autoplay = "walk"
