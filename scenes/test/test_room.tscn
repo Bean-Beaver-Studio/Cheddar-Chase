@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="5_igxh4"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="6_7vvp8"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="7_isx6g"]
-[ext_resource type="PackedScene" uid="uid://be61rj1jagrum" path="res://scenes/characters/enemies/bug_blue.tscn" id="8_fjamn"]
+[ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="8_7cx4c"]
 [ext_resource type="PackedScene" uid="uid://cv20jn305h3po" path="res://scenes/lamp.tscn" id="9_0ns4c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_643cg"]
@@ -310,7 +310,7 @@ position = Vector2(-67, -20)
 position = Vector2(11, 22)
 color = Color(0.39237, 0.461025, 0.567382, 1)
 
-[node name="bug_blue" parent="." instance=ExtResource("8_fjamn")]
+[node name="bug_red" parent="." instance=ExtResource("8_7cx4c")]
 
 [node name="lamp" parent="." instance=ExtResource("9_0ns4c")]
 position = Vector2(33, -30)
