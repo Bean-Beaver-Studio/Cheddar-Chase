@@ -297,6 +297,7 @@ step = 0.05
 value = 1.0
 
 [node name="fullscreen_label" type="Label" parent="background/settings"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -324,6 +325,7 @@ theme = SubResource("Theme_7yams")
 button_pressed = true
 
 [node name="integer_label" type="Label" parent="background/settings"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -352,9 +354,9 @@ button_pressed = true
 
 [node name="controls" type="Control" parent="background"]
 anchors_preset = 0
-offset_top = 15.0
+offset_top = -30.0
 offset_right = 40.0
-offset_bottom = 55.0
+offset_bottom = 10.0
 
 [node name="controls_label" type="Label" parent="background/controls"]
 layout_mode = 0

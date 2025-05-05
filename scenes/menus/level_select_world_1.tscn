@@ -152,7 +152,7 @@ next_scene_path = "res://scenes/levels/level_5.tscn"
 next_level_up = NodePath("../level_icon5B")
 next_level_down = NodePath("../level_icon5C")
 next_level_left = NodePath("../level_icon4")
-next_level_right = NodePath("../level_icon6")
+next_level_right = NodePath("")
 
 [node name="level_icon5B" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("2_m0ttj")]
 layout_mode = 1
@@ -185,27 +185,6 @@ level_name = "5D"
 next_scene_path = "res://scenes/levels/level_5D.tscn"
 next_level_left = NodePath("../level_icon5C")
 
-[node name="level_icon6" parent="." node_paths=PackedStringArray("next_level_up", "next_level_left") instance=ExtResource("2_m0ttj")]
-layout_mode = 1
-offset_left = 126.0
-offset_top = -7.0
-offset_right = 126.0
-offset_bottom = -7.0
-level_name = "6"
-next_scene_path = "res://scenes/levels/level_6.tscn"
-next_level_up = NodePath("../level_icon7")
-next_level_left = NodePath("../level_icon5")
-
-[node name="level_icon7" parent="." node_paths=PackedStringArray("next_level_down") instance=ExtResource("2_m0ttj")]
-layout_mode = 1
-offset_left = 126.0
-offset_top = -53.0
-offset_right = 126.0
-offset_bottom = -53.0
-level_name = "7"
-next_scene_path = "res://scenes/levels/level_7.tscn"
-next_level_down = NodePath("../level_icon6")
-
 [node name="player_icon" parent="." instance=ExtResource("3_n6nib")]
 layout_mode = 1
 anchors_preset = -1
@@ -213,22 +192,6 @@ offset_left = 330.0
 offset_top = -103.0
 offset_right = 362.0
 offset_bottom = -71.0
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 98.0
-offset_top = 18.0
-offset_right = 154.0
-offset_bottom = 19.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 94.0
-offset_top = -69.0
-offset_right = 95.0
-offset_bottom = -27.0
-color = Color(0, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 layout_mode = 0

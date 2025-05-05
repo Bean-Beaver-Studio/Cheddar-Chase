@@ -7,7 +7,7 @@
 [ext_resource type="StyleBox" uid="uid://cipk5xsyhtm1c" path="res://scenes/tools/button_stye_pressed.tres" id="5_2s3lw"]
 [ext_resource type="StyleBox" uid="uid://dfvf14wsxhcja" path="res://scenes/tools/button_style_normal.tres" id="6_2gbhv"]
 [ext_resource type="Script" path="res://scripts/tools/ui/ready_grab_focus.gd" id="6_a0se2"]
-[ext_resource type="PackedScene" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="8_5fa0q"]
+[ext_resource type="PackedScene" uid="uid://rutg8iqdwpko" path="res://scenes/menus/menu_navigation_keyboard_instruction.tscn" id="8_5fa0q"]
 
 [sub_resource type="Gradient" id="Gradient_7yi8r"]
 interpolation_mode = 2
@@ -84,6 +84,7 @@ theme_override_styles/normal = ExtResource("6_2gbhv")
 text = "Options"
 
 [node name="exit_button" type="Button" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bakj05nve5nbd" path="res://assets/characters/enemies/bug_blue/canvas_texture/walk_canvas_texture.tres" id="4_p8lgw"]
 [ext_resource type="PackedScene" uid="uid://cxb8foogagtu4" path="res://scenes/tools/hurt_box.tscn" id="5_a00sg"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="6_2j0bv"]
-[ext_resource type="Texture2D" uid="uid://dv1kal65cj6l7" path="res://assets/characters/enemies/bug_blue/canvas_texture/walk_diag_canvas_texture.tres" id="6_s0ov7"]
-[ext_resource type="AudioStream" uid="uid://q1771umix788" path="res://assets/characters/enemies/bug_damaged.wav" id="7_16jct"]
-[ext_resource type="AudioStream" uid="uid://k5btwop3xbgw" path="res://assets/characters/enemies/bug_death.wav" id="8_gagi0"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/bug_blue/canvas_texture/walk_diag_canvas_texture.tres" id="6_s0ov7"]
+[ext_resource type="AudioStream" uid="uid://2jdbt2v3kslj" path="res://assets/characters/enemies/bug_damaged.wav" id="7_16jct"]
+[ext_resource type="AudioStream" uid="uid://cqrdyiny05iwb" path="res://assets/characters/enemies/bug_death.wav" id="8_gagi0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yxqdm"]
 shader = ExtResource("2_3ncwc")
