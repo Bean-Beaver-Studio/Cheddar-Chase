@@ -62,10 +62,26 @@ func _physics_process(delta):
 		else:
 			wander(delta)
 	
+	snap_animation_sprite()
 	move_and_slide()
-	
-	if velocity != Vector2.ZERO:
-		animated_sprite_2d.rotation = velocity.angle()
+
+func snap_animation_sprite() -> void:
+	if velocity == Vector2.ZERO and knockback_velocity == Vector2.ZERO:
+		return
+
+	# Calulate snapping index (0-7)
+	var index = int(round(velocity.angle() / (PI / 4))) % 8
+
+	# Handle negative angles
+	if index < 0:
+		index += 8
+
+	if index % 2 == 0:
+		animated_sprite_2d.play("walk")
+		animated_sprite_2d.rotation = index * PI / 4
+	else:
+		animated_sprite_2d.play("walk_diag")
+		animated_sprite_2d.rotation = index * PI / 4 + (PI / 4)
 
 func can_see_player() -> bool:
 	if not player or not is_instance_valid(player):

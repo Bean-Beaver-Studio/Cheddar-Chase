@@ -1,0 +1,8 @@
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://byibojm0msrqc"]
+
+[ext_resource type="Texture2D" uid="uid://c5qerhfjd7afj" path="res://assets/characters/enemies/bug_flying/diffuse/idle_diag.png" id="1_m7xlu"]
+[ext_resource type="Texture2D" uid="uid://c2fy3udhr361k" path="res://assets/characters/enemies/bug_flying/normal/idle_diag_normal.png" id="2_verrr"]
+
+[resource]
+diffuse_texture = ExtResource("1_m7xlu")
+normal_texture = ExtResource("2_verrr")

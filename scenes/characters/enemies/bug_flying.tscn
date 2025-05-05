@@ -1,21 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://bw5xityvbf8d2"]
+[gd_scene load_steps=30 format=3 uid="uid://bw5xityvbf8d2"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/bug_flying.gd" id="1_dlee4"]
 [ext_resource type="PackedScene" uid="uid://cxb8foogagtu4" path="res://scenes/tools/hurt_box.tscn" id="2_jmt0c"]
-[ext_resource type="Texture2D" uid="uid://dndtsm6ktxjqe" path="res://assets/characters/enemies/bug_flying/diffuse/damaged.png" id="2_nys4c"]
 [ext_resource type="PackedScene" uid="uid://bq7xttj67lksf" path="res://scenes/tools/hit_box.tscn" id="3_1l2w5"]
 [ext_resource type="Texture2D" uid="uid://bm77s2i4frcic" path="res://assets/characters/enemies/bug_flying/canvas_texture/death_canvas_texture.tres" id="3_rn65u"]
 [ext_resource type="Texture2D" uid="uid://cpfghqcptnhx8" path="res://assets/characters/enemies/bug_flying/canvas_texture/idle_canvas_texture.tres" id="4_k6e6f"]
-[ext_resource type="AudioStream" uid="uid://2jdbt2v3kslj" path="res://assets/characters/enemies/bug_damaged.wav" id="7_t84h8"]
-[ext_resource type="AudioStream" uid="uid://cqrdyiny05iwb" path="res://assets/characters/enemies/bug_death.wav" id="8_lcq48"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0sxd2"]
-atlas = ExtResource("2_nys4c")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gc04o"]
-atlas = ExtResource("2_nys4c")
-region = Rect2(64, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://byibojm0msrqc" path="res://assets/characters/enemies/bug_flying/canvas_texture/idle_diag_canvas_texture.tres" id="4_lbt2x"]
+[ext_resource type="AudioStream" uid="uid://cwsho08qre5d6" path="res://assets/characters/enemies/bug_damaged.wav" id="7_t84h8"]
+[ext_resource type="AudioStream" uid="uid://cibkjuq05yxkb" path="res://assets/characters/enemies/bug_death.wav" id="8_lcq48"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py2tg"]
 atlas = ExtResource("3_rn65u")
@@ -57,19 +49,32 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("4_k6e6f")
 region = Rect2(160, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7ljd"]
+atlas = ExtResource("4_lbt2x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffhl8"]
+atlas = ExtResource("4_lbt2x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8c35"]
+atlas = ExtResource("4_lbt2x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_subls"]
+atlas = ExtResource("4_lbt2x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bobv"]
+atlas = ExtResource("4_lbt2x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6lup"]
+atlas = ExtResource("4_lbt2x")
+region = Rect2(160, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ypsqa"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0sxd2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gc04o")
-}],
-"loop": false,
-"name": &"damaged",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_py2tg")
@@ -109,6 +114,29 @@ animations = [{
 "loop": true,
 "name": &"walk",
 "speed": 40.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7ljd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffhl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8c35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_subls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bobv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6lup")
+}],
+"loop": true,
+"name": &"walk_diag",
+"speed": 40.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxdyh"]
@@ -130,7 +158,7 @@ script = ExtResource("1_dlee4")
 
 [node name="animated_sprite_bug_flying" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ypsqa")
-animation = &"death"
+animation = &"walk_diag"
 autoplay = "walk"
 
 [node name="detection_area" type="Area2D" parent="."]
