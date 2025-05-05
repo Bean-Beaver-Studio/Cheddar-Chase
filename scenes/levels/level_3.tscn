@@ -14,12 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="10_j6b82"]
 [ext_resource type="PackedScene" uid="uid://cv7e0kb2x6ro2" path="res://scenes/collectibles/cheese.tscn" id="10_j577l"]
 [ext_resource type="Script" path="res://scripts/characters/enemies/mouse_trap.gd" id="10_rtwo3"]
-[ext_resource type="Texture2D" uid="uid://dfy86ke67cjnu" path="res://assets/characters/enemies/mouse_trap/diffuse/trapped_bug.png" id="11_fu4yp"]
-[ext_resource type="Texture2D" uid="uid://cneckq5viqkpc" path="res://assets/characters/enemies/mouse_trap/diffuse/idle.png" id="12_t7pqs"]
-[ext_resource type="Texture2D" uid="uid://dhfo7qhnwmc5d" path="res://assets/characters/enemies/mouse_trap/diffuse/trapped.png" id="13_xewnx"]
-[ext_resource type="Texture2D" uid="uid://di2n5cse8opl0" path="res://assets/characters/enemies/bug_blue/canvas_texture/death_canvas_texture.tres" id="14_iivop"]
-[ext_resource type="Texture2D" uid="uid://2vgp7ej5is50" path="res://assets/characters/enemies/mouse_trap/diffuse/pow.png" id="15_d2o5c"]
-[ext_resource type="AudioStream" uid="uid://cpasawn4bmt6g" path="res://assets/characters/enemies/mouse_trap/slap.wav" id="17_jd0q5"]
+[ext_resource type="Texture2D" uid="uid://bclnkckxlx073" path="res://assets/characters/enemies/mouse_trap/diffuse/trapped_bug.png" id="11_fu4yp"]
+[ext_resource type="Texture2D" uid="uid://csf5hvlfv612o" path="res://assets/characters/enemies/mouse_trap/diffuse/idle.png" id="12_t7pqs"]
+[ext_resource type="Texture2D" uid="uid://dukvymjm6s8mj" path="res://assets/characters/enemies/mouse_trap/diffuse/trapped.png" id="13_xewnx"]
+[ext_resource type="Texture2D" uid="uid://bm77s2i4frcic" path="res://assets/characters/enemies/bug_flying/canvas_texture/death_canvas_texture.tres" id="14_iivop"]
+[ext_resource type="Texture2D" uid="uid://cl3bilbg3i7en" path="res://assets/characters/enemies/mouse_trap/diffuse/pow.png" id="15_d2o5c"]
+[ext_resource type="AudioStream" uid="uid://brqk4p4n5iaod" path="res://assets/characters/enemies/mouse_trap/slap.wav" id="17_jd0q5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ec55s"]
 atlas = ExtResource("11_fu4yp")

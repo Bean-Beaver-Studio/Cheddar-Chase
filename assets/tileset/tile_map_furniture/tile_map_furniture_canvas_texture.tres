@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://ds6ds3c6feurl"]
 
-[ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="1_iymu4"]
-[ext_resource type="Texture2D" uid="uid://pjffuugamygb" path="res://assets/tileset/tile_map_furniture/tile_map_furniture_normal.png" id="2_kpxh7"]
+[ext_resource type="Texture2D" uid="uid://bx4rpalomfeua" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="1_iymu4"]
+[ext_resource type="Texture2D" uid="uid://bgcfwcch4e8in" path="res://assets/tileset/tile_map_furniture/tile_map_furniture_normal.png" id="2_kpxh7"]
 
 [resource]
 diffuse_texture = ExtResource("1_iymu4")

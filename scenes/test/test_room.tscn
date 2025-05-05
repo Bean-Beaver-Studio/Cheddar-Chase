@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=4 uid="uid://c6dxo6y4s31mf"]
 
 [ext_resource type="Shader" path="res://scripts/tools/toon-shader.gdshader" id="1_sltx4"]
-[ext_resource type="Texture2D" uid="uid://b2dgo7p25slr" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="2_4vs11"]
-[ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="3_288ju"]
+[ext_resource type="Texture2D" uid="uid://bg8etx7bl1tj3" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="2_4vs11"]
+[ext_resource type="Texture2D" uid="uid://bx4rpalomfeua" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="3_288ju"]
 [ext_resource type="PackedScene" uid="uid://y16vsgpfcas8" path="res://scenes/tools/tile_map_layers/room_layer.tscn" id="4_gx528"]
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="5_igxh4"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="6_7vvp8"]

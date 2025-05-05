@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://7ly2w10lfjsl"]
 
-[ext_resource type="Texture2D" uid="uid://cj6jfs6bugmgy" path="res://assets/characters/mouse/diffuse/walk.png" id="1_jrf42"]
-[ext_resource type="Texture2D" uid="uid://b64jnuo7t66yi" path="res://assets/characters/mouse/normal/walk_normal.png" id="2_1qytd"]
+[ext_resource type="Texture2D" uid="uid://b5lhnaeu1o31k" path="res://assets/characters/mouse/diffuse/walk.png" id="1_jrf42"]
+[ext_resource type="Texture2D" uid="uid://bfxivxfwy4o81" path="res://assets/characters/mouse/normal/walk_normal.png" id="2_1qytd"]
 
 [resource]
 diffuse_texture = ExtResource("1_jrf42")

@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://duevadg5uqmc7"]
 
-[ext_resource type="Texture2D" uid="uid://b84yt3nli0wwt" path="res://assets/characters/enemies/bug_red/diffuse/walk_diag.png" id="1_gh3gl"]
-[ext_resource type="Texture2D" uid="uid://c6af0p1j6i73b" path="res://assets/characters/enemies/bug_red/normal/walk_diag_normal.png" id="2_8hbxy"]
+[ext_resource type="Texture2D" uid="uid://dnebjcnhjdbpf" path="res://assets/characters/enemies/bug_red/diffuse/walk_diag.png" id="1_gh3gl"]
+[ext_resource type="Texture2D" uid="uid://h3vc4nwcg5gf" path="res://assets/characters/enemies/bug_red/normal/walk_diag_normal.png" id="2_8hbxy"]
 
 [resource]
 diffuse_texture = ExtResource("1_gh3gl")

@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://cixl3pcsusgiu"]
 
-[ext_resource type="Texture2D" uid="uid://ukyk27fm0771" path="res://assets/characters/mouse/diffuse/attack_right.png" id="1_dkvtv"]
-[ext_resource type="Texture2D" uid="uid://c00r1aqbrow8" path="res://assets/characters/mouse/normal/attack_right_normal.png" id="2_0p0rp"]
+[ext_resource type="Texture2D" uid="uid://65kvqoh2vmpp" path="res://assets/characters/mouse/diffuse/attack_right.png" id="1_dkvtv"]
+[ext_resource type="Texture2D" uid="uid://bbidvnlj3c0vr" path="res://assets/characters/mouse/normal/attack_right_normal.png" id="2_0p0rp"]
 
 [resource]
 diffuse_texture = ExtResource("1_dkvtv")
