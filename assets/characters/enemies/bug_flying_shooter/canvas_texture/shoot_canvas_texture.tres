@@ -1,7 +1,7 @@
-[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://2ijwjwek0wot"]
+[gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://ctloey1du3fqw"]
 
-[ext_resource type="Texture2D" uid="uid://begifbjlohjmx" path="res://assets/characters/enemies/bug_flying_shooter/diffuse/shoot.png" id="1_1pjci"]
-[ext_resource type="Texture2D" uid="uid://csf0as0iw3ils" path="res://assets/characters/enemies/bug_flying_shooter/normal/shoot_normal.png" id="2_giwhy"]
+[ext_resource type="Texture2D" uid="uid://cwhu13clhdpc5" path="res://assets/characters/enemies/bug_flying_shooter/diffuse/shoot.png" id="1_1pjci"]
+[ext_resource type="Texture2D" uid="uid://b7bst4a5ujp1l" path="res://assets/characters/enemies/bug_flying_shooter/normal/shoot_normal.png" id="2_giwhy"]
 
 [resource]
 diffuse_texture = ExtResource("1_1pjci")

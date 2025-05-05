@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://c6dxo6y4s31mf"]
+[gd_scene load_steps=9 format=4 uid="uid://c6dxo6y4s31mf"]
 
 [ext_resource type="Shader" path="res://scripts/tools/toon-shader.gdshader" id="1_sltx4"]
 [ext_resource type="PackedScene" uid="uid://y16vsgpfcas8" path="res://scenes/tools/tile_map_layers/room_layer.tscn" id="4_gx528"]
 [ext_resource type="PackedScene" uid="uid://c74xlu0of2unm" path="res://scenes/tools/tile_map_layers/furniture_layer.tscn" id="5_igxh4"]
 [ext_resource type="PackedScene" uid="uid://cagii1m6affwl" path="res://scenes/tools/tile_map_layers/decoration_layer.tscn" id="6_7vvp8"]
-[ext_resource type="PackedScene" uid="uid://bw5xityvbf8d2" path="res://scenes/characters/enemies/bug_flying.tscn" id="7_hu6g7"]
+[ext_resource type="PackedScene" uid="uid://bd00qhbwn5hyd" path="res://scenes/characters/enemies/bug_flying_shooter.tscn" id="6_tp5rm"]
 [ext_resource type="PackedScene" uid="uid://dnlv8wuw8y7et" path="res://scenes/characters/mouse/player.tscn" id="7_isx6g"]
-[ext_resource type="PackedScene" uid="uid://ct4xnrb6ua7pq" path="res://scenes/characters/enemies/bug_red.tscn" id="8_7cx4c"]
 [ext_resource type="PackedScene" uid="uid://cv20jn305h3po" path="res://scenes/lamp.tscn" id="9_0ns4c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_643cg"]
@@ -27,15 +26,14 @@ tile_map_data = PackedByteArray("AAD8//z/AAADAAMAAAD///z/AAAAAAMAAAA=")
 use_parent_material = true
 
 [node name="player" parent="." instance=ExtResource("7_isx6g")]
-position = Vector2(-67, -20)
+position = Vector2(-36, 50)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(11, 22)
 color = Color(0.39237, 0.461025, 0.567382, 1)
 
-[node name="bug_red" parent="." instance=ExtResource("8_7cx4c")]
-
-[node name="bug_flying" parent="." instance=ExtResource("7_hu6g7")]
+[node name="bug_flying_shooter" parent="." instance=ExtResource("6_tp5rm")]
+position = Vector2(112, -74)
 
 [node name="lamp" parent="." instance=ExtResource("9_0ns4c")]
-position = Vector2(33, -30)
+position = Vector2(66, 63)

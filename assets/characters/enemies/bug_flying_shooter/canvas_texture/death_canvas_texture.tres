@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://dpn730ghkipsp"]
 
-[ext_resource type="Texture2D" uid="uid://yc3t6sdjmudq" path="res://assets/characters/enemies/bug_flying_shooter/diffuse/death.png" id="1_5e25e"]
-[ext_resource type="Texture2D" uid="uid://d2dc8lqj8gwy8" path="res://assets/characters/enemies/bug_flying_shooter/normal/death_normal.png" id="2_ws6s5"]
+[ext_resource type="Texture2D" uid="uid://cc1juij71wsko" path="res://assets/characters/enemies/bug_flying_shooter/diffuse/death.png" id="1_5e25e"]
+[ext_resource type="Texture2D" uid="uid://1e846nnfxsei" path="res://assets/characters/enemies/bug_flying_shooter/normal/death_normal.png" id="2_ws6s5"]
 
 [resource]
 diffuse_texture = ExtResource("1_5e25e")

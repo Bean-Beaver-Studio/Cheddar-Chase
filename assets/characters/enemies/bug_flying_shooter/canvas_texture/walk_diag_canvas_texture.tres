@@ -1,0 +1,6 @@
+[gd_resource type="CanvasTexture" load_steps=2 format=3 uid="uid://b3f614hu1ifkc"]
+
+[ext_resource type="Texture2D" uid="uid://dvet7vbvg4n5u" path="res://assets/characters/enemies/bug_flying_shooter/diffuse/walk_diag.png" id="1_n74lw"]
+
+[resource]
+diffuse_texture = ExtResource("1_n74lw")
