@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv20jn305h3po"]
+
+[ext_resource type="Texture2D" uid="uid://bjlll5yja24qv" path="res://assets/furnishings/lamp.png" id="1_qfxs2"]
+
+[sub_resource type="Gradient" id="Gradient_sy2nm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_donbt"]
+gradient = SubResource("Gradient_sy2nm")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_enabled = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gj3q"]
+radius = 20.0
+
+[node name="lamp" type="StaticBody2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+texture = ExtResource("1_qfxs2")
+
+[node name="PointLight2D_shadow" type="PointLight2D" parent="."]
+color = Color(1, 0.808533, 0.10903, 1)
+energy = 0.4
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_donbt")
+texture_scale = 5.0
+height = 30.0
+
+[node name="PointLight2D_no_shadow" type="PointLight2D" parent="."]
+color = Color(1, 0.808533, 0.10903, 1)
+energy = 0.4
+texture = SubResource("GradientTexture2D_donbt")
+texture_scale = 5.0
+height = 30.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3gj3q")

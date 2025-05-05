@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://o8sj1thyh5lx"]
+[gd_scene load_steps=15 format=4 uid="uid://o8sj1thyh5lx"]
 
 [ext_resource type="Texture2D" uid="uid://b2dgo7p25slr" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="1_qfyt2"]
 [ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="2_y46m5"]
@@ -285,14 +285,11 @@ physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_7ltqg")
 sources/1 = SubResource("TileSetAtlasSource_noeul")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ring5"]
-shader = ExtResource("7_flal7")
-
-[sub_resource type="Gradient" id="Gradient_sy2nm"]
+[sub_resource type="Gradient" id="Gradient_wtiem"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_l5e5o"]
-gradient = SubResource("Gradient_sy2nm")
+gradient = SubResource("Gradient_wtiem")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
@@ -313,7 +310,6 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//z/AAADAAMAAAD///z/AAAAAAMAAAA=")
 
 [node name="decoration_layer" parent="." instance=ExtResource("5_1egfr")]
-material = SubResource("ShaderMaterial_ring5")
 use_parent_material = true
 
 [node name="PointLight2D_with_shadow" type="PointLight2D" parent="."]
