@@ -16,8 +16,8 @@ var is_falling = false
 var is_flying = true
 
 # Variables for Health
-var max_health = 3
-var current_health = 3
+var max_health = 1
+var current_health = 1
 var is_dead = false
 
 # Variables for Knockback
@@ -27,7 +27,6 @@ var knockback_timer = 0.0
 var knockback_strength = 150
 
 # Audio references
-@onready var audio_damaged: AudioStreamPlayer2D = $audio/audio_damaged
 @onready var audio_death: AudioStreamPlayer2D = $audio/audio_death
 
 # References to nodes
@@ -123,15 +122,7 @@ func take_damage(amount: int, attacker_position: Vector2):
 	
 	if current_health <= 0:
 		die()
-	else:
-		var direction = (global_position - attacker_position).normalized()
-		knockback_velocity = direction * knockback_strength
-		knockback_timer = knockback_duration
-		
-		animated_sprite_2d.play("damaged")
-		audio_damaged.play()
-		await animated_sprite_2d.animation_finished
-		animated_sprite_2d.play("walk")
+	
 
 func die():
 	is_dead = true
