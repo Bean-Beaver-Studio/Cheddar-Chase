@@ -135,7 +135,8 @@ func shoot_at_player():
 		animated_sprite_2d.rotation = direction.angle()
 		
 		var projectile = Projectile.instantiate()
-		projectile.global_position = global_position
+		# idk why i need to move up y -24, maybe starts at corner of bug or something
+		projectile.global_position = global_position + Vector2(0, -24) 
 		projectile.set_velocity(direction * projectile_speed)
 		
 		# Add projectile to scene and play shooting animation
