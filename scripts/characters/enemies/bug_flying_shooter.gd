@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 # Variables for movement
 var speed = 35
-var chase_speed = 40
 var wander_speed = 15
 var player_chase = false
 var player = null
@@ -11,21 +10,10 @@ var wander_time = 0
 var wander_interval = 3
 var pause_time = 0
 var pause_duration = 2
-var is_rolling = false
-var is_falling = false
-var is_flying = true
-var can_rotate_sprite = true
 
 # Variables for Health
-var max_health = 1
 var current_health = 1
 var is_dead = false
-
-# Variables for Knockback
-var knockback_velocity = Vector2.ZERO
-var knockback_duration = 0.2
-var knockback_timer = 0.0
-var knockback_strength = 150
 
 # Audio references
 @onready var audio_death: AudioStreamPlayer2D = $audio/audio_death
@@ -59,50 +47,36 @@ func _physics_process(delta):
 	if is_dead:
 		return
 	
-	# Handle knockback
-	if knockback_timer > 0:
-		knockback_timer -= delta
-		velocity = knockback_velocity
-		knockback_velocity = knockback_velocity.move_toward(Vector2.ZERO, 500 * delta)
+	if player and is_instance_valid(player) and can_see_player():
+		if global_position.distance_to(player.global_position) <= shooting_range:
+			velocity = Vector2.ZERO  # Ensure not moving while shooting
+			shoot_at_player()
+		pause_time = 0
+	elif pause_time < pause_duration:
+		pause(delta)
 	else:
-		if player and is_instance_valid(player) and can_see_player():
-			# Rotate to face the player
-			var direction = (player.global_position - global_position).normalized()
-			animated_sprite_2d.rotation = direction.angle()
-
-			if global_position.distance_to(player.global_position) <= shooting_range:
-				# Stop moving and shoot
-				shoot_at_player()
-				velocity = Vector2.ZERO  # Ensure not moving while shooting
-			else:
-				# You can add logic here if you want to do something else when not shooting
-				velocity = Vector2.ZERO
-			pause_time = 0
-		elif pause_time < pause_duration:
-			pause(delta)
-		else:
-			wander(delta)
+		wander(delta)
 	
-	snap_animation_sprite()
 	move_and_slide()
 
-func snap_animation_sprite() -> void:
-	if velocity == Vector2.ZERO and knockback_velocity == Vector2.ZERO:
-		return
+func snap_animation_sprite(animation: String, direction: Vector2 = Vector2.ZERO) -> void:
+	if direction == Vector2.ZERO:
+		direction = velocity
 
 	# Calulate snapping index (0-7)
-	var index = int(round(velocity.angle() / (PI / 4))) % 8
+	var index = int(round(direction.angle() / (PI / 4))) % 8
 
 	# Handle negative angles
 	if index < 0:
 		index += 8
 
 	if index % 2 == 0:
-		animated_sprite_2d.play("walk")
+		animated_sprite_2d.play(animation)
 		animated_sprite_2d.rotation = index * PI / 4
 	else:
-		animated_sprite_2d.play("walk_diag")
+		animated_sprite_2d.play(animation + "_diag")
 		animated_sprite_2d.rotation = index * PI / 4 + (PI / 4)
+
 
 func can_see_player() -> bool:
 	if not player or not is_instance_valid(player):
@@ -116,23 +90,15 @@ func can_see_player() -> bool:
 	# Ensure the ray doesn't hit walls (or obstacles) before detecting the player
 	return not ray_cast.is_colliding()
 
-func chase_player():
-	if not player or not is_instance_valid(player):
-		return
-	
-	var direction = (player.global_position - global_position).normalized()
-	velocity = direction * chase_speed
-
 func shoot_at_player():
+	var direction = (player.global_position - global_position).normalized()
+	snap_animation_sprite("shoot", direction)
+	
 	if can_shoot and player and is_instance_valid(player):
 		can_shoot = false
 		shoot_timer.start()
 		
 		# Calculate the direction to the player
-		var direction = (player.global_position - global_position).normalized()
-		
-		# Rotate the sprite to face the player
-		animated_sprite_2d.rotation = direction.angle()
 		
 		var projectile = Projectile.instantiate()
 		# idk why i need to move up y -24, maybe starts at corner of bug or something
@@ -141,7 +107,6 @@ func shoot_at_player():
 		
 		# Add projectile to scene and play shooting animation
 		get_parent().add_child(projectile)
-		animated_sprite_2d.play("shoot")
 
 func _on_shoot_timer_timeout():
 	can_shoot = true
@@ -160,6 +125,9 @@ func wander(delta):
 		velocity = (wander_target - global_position).normalized() * wander_speed
 	else:
 		velocity = Vector2.ZERO
+	
+	snap_animation_sprite("walk")
+
 
 func _on_detection_area_body_entered(body):
 	if body and body.name == "player":
