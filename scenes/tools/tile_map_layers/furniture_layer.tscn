@@ -81,5 +81,6 @@ physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_s54fx")
 
 [node name="furniture_layer" type="TileMapLayer"]
+use_parent_material = true
 tile_set = SubResource("TileSet_ai4nm")
 rendering_quadrant_size = 32
