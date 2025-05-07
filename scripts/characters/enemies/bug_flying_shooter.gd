@@ -23,6 +23,7 @@ var can_shoot = true
 var shoot_interval = 2.0
 var projectile_speed = 200
 var shooting_range = 200
+var is_flying = true # used by mousetrap
 
 # References to nodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $animated_sprite_bug_flying_shooter
