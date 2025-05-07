@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=4 uid="uid://y16vsgpfcas8"]
 
-[ext_resource type="Texture2D" uid="uid://b2dgo7p25slr" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="1_cqqf8"]
-[ext_resource type="Texture2D" uid="uid://dpel7gixpwmhx" path="res://assets/tileset/tile_map_floor/tile_map_floor_normal.png" id="2_biiyc"]
-[ext_resource type="Texture2D" uid="uid://hg5gl22kr5w" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="2_y3s62"]
+[ext_resource type="Texture2D" uid="uid://bg8etx7bl1tj3" path="res://assets/tileset/tile_map_floor/tile_map_floor.png" id="1_cqqf8"]
+[ext_resource type="Texture2D" uid="uid://dr61aw1yhgvdw" path="res://assets/tileset/tile_map_floor/tile_map_floor_normal.png" id="2_biiyc"]
+[ext_resource type="Texture2D" uid="uid://bx4rpalomfeua" path="res://assets/tileset/tile_map_furniture/tile_map_furniture.png" id="2_y3s62"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7gb2y"]
 polygon = PackedVector2Array(16, -16, 16, -12, -12, -12, -12, 16, -16, 16, -16, -12, -16, -16)

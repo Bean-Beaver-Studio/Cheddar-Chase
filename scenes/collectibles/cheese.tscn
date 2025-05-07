@@ -1,7 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cv7e0kb2x6ro2"]
+[gd_scene load_steps=11 format=3 uid="uid://cv7e0kb2x6ro2"]
 
 [ext_resource type="Script" path="res://scripts/collectibles/cheese.gd" id="1_4ciu2"]
+[ext_resource type="Shader" path="res://scripts/tools/toon-shader.gdshader" id="2_m25y2"]
 [ext_resource type="Texture2D" uid="uid://cgheb67n5m8ul" path="res://assets/collectibles/cheese/canvas_texture/cheese_canvas_texture.tres" id="2_x7jqx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apycq"]
+shader = ExtResource("2_m25y2")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gi01"]
 atlas = ExtResource("2_x7jqx")
@@ -47,6 +51,7 @@ collision_mask = 2
 script = ExtResource("1_4ciu2")
 
 [node name="animated_sprite_2d" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_apycq")
 sprite_frames = SubResource("SpriteFrames_53bq8")
 animation = &"idle"
 autoplay = "idle"

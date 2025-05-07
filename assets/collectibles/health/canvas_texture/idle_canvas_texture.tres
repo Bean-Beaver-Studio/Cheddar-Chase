@@ -1,7 +1,7 @@
 [gd_resource type="CanvasTexture" load_steps=3 format=3 uid="uid://cn8nxktgg4fdv"]
 
-[ext_resource type="Texture2D" uid="uid://cjq40l6chl675" path="res://assets/collectibles/health/diffuse/idle.png" id="1_q1rog"]
-[ext_resource type="Texture2D" uid="uid://c2xq14x7qn72f" path="res://assets/collectibles/health/normal/idle_normal.png" id="2_s2cww"]
+[ext_resource type="Texture2D" uid="uid://dicxfqtd4oyb4" path="res://assets/collectibles/health/diffuse/idle.png" id="1_q1rog"]
+[ext_resource type="Texture2D" uid="uid://b13yhf3pibwhk" path="res://assets/collectibles/health/normal/idle_normal.png" id="2_s2cww"]
 
 [resource]
 diffuse_texture = ExtResource("1_q1rog")

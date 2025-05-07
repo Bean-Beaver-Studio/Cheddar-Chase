@@ -28,12 +28,12 @@ use_parent_material = true
 [node name="player" parent="." instance=ExtResource("7_isx6g")]
 position = Vector2(-36, 50)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2(11, 22)
-color = Color(0.39237, 0.461025, 0.567382, 1)
-
 [node name="bug_flying_shooter" parent="." instance=ExtResource("6_tp5rm")]
 position = Vector2(112, -74)
 
 [node name="lamp" parent="." instance=ExtResource("9_0ns4c")]
 position = Vector2(66, 63)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(11, 22)
+color = Color(0.818182, 0.850677, 0.900904, 1)
