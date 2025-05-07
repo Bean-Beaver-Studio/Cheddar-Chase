@@ -286,13 +286,16 @@ position = Vector2(-12, -31)
 [node name="lights" type="Node" parent="."]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="lights"]
+visible = false
 position = Vector2(11, 22)
 color = Color(0.818182, 0.850677, 0.900904, 1)
 
 [node name="lamp" parent="lights" instance=ExtResource("22_6clcq")]
+visible = false
 position = Vector2(487, 124)
 
 [node name="lamp2" parent="lights" instance=ExtResource("22_6clcq")]
+visible = false
 position = Vector2(376, 232)
 
 [connection signal="trigger_death_menu" from="player/player" to="game_manager" method="_on_player_trigger_death_menu"]
